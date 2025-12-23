@@ -6,7 +6,7 @@
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=lyl224459&show_icons=true&theme=radical)
 
-![GitHub Streak](https://github-readme-streak-stats.demolab.com/?user=lyl224459&theme=radical)
+![GitHub Streak](https://streak-stats.demolab.com/?user=lyl224459&theme=radical)
 
 ## 🔥 热门仓库
 
