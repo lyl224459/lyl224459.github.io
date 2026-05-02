@@ -19,12 +19,12 @@
 ### 📊 GitHub 统计
 
 <div align="center">
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=lyl224459&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=7C5CFC&icon_color=00CEC9&text_color=C9D1D9" />
+  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=lyl224459&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=7C5CFC&icon_color=00CEC9&text_color=C9D1D9" />
   <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=lyl224459&layout=compact&langs_count=6&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=7C5CFC&text_color=C9D1D9" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=lyl224459&theme=tokyonight&hide_border=true&background=0D1117&ring=7C5CFC&fire=FD79A8&currStreakLabel=00CEC9&sideLabels=C9D1D9" alt="streak" />
+  <img src="https://github-readme-streak-stats.vercel.app/?user=lyl224459&theme=tokyonight&hide_border=true&background=0D1117&ring=7C5CFC&fire=FD79A8&currStreakLabel=00CEC9&sideLabels=C9D1D9" alt="streak" />
 </div>
 
 <div align="center">
@@ -83,40 +83,15 @@
 
 ### 🛠️ 技术栈
 
-<table align="center">
-  <tr>
-    <th>类别</th>
-    <th>技术</th>
-    <th>熟练度</th>
-  </tr>
-  <tr>
-    <td>💜 语言</td>
-    <td>
-      <img src="https://img.shields.io/badge/Kotlin-7C5CFC?style=flat&logo=kotlin&logoColor=white" />
-    </td>
-    <td>
-      <img src="https://progress-bar.dev/85/?title=&width=120&color=7C5CFC&bg=2D2D3D" />
-    </td>
-  </tr>
-  <tr>
-    <td>☕ 语言</td>
-    <td>
-      <img src="https://img.shields.io/badge/Java-F89820?style=flat&logo=openjdk&logoColor=white" />
-    </td>
-    <td>
-      <img src="https://progress-bar.dev/80/?title=&width=120&color=F89820&bg=2D2D3D" />
-    </td>
-  </tr>
-  <tr>
-    <td>☁️ 框架</td>
-    <td>
-      <img src="https://img.shields.io/badge/CloudSim-3B82F6?style=flat&logo=cloud&logoColor=white" />
-    </td>
-    <td>
-      <img src="https://progress-bar.dev/75/?title=&width=120&color=3B82F6&bg=2D2D3D" />
-    </td>
-  </tr>
-</table>
+<div align="center">
+
+| 类别 | 技术 | 熟练度 |
+|:---:|------|:---:|
+| 💜 语言 | <img src="https://img.shields.io/badge/Kotlin-7C5CFC?style=flat&logo=kotlin&logoColor=white" /> | `████████░░` 85% |
+| ☕ 语言 | <img src="https://img.shields.io/badge/Java-F89820?style=flat&logo=openjdk&logoColor=white" /> | `████████░░` 80% |
+| ☁️ 框架 | <img src="https://img.shields.io/badge/CloudSim-3B82F6?style=flat&logo=cloud&logoColor=white" /> | `███████░░░` 75% |
+
+</div>
 
 ---
 
