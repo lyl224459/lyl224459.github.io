@@ -19,16 +19,19 @@
 ### 📊 GitHub 统计
 
 <div align="center">
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=lyl224459&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=7C5CFC&icon_color=00CEC9&text_color=C9D1D9" />
-  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=lyl224459&layout=compact&langs_count=6&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=7C5CFC&text_color=C9D1D9" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.vercel.app/?user=lyl224459&theme=tokyonight&hide_border=true&background=0D1117&ring=7C5CFC&fire=FD79A8&currStreakLabel=00CEC9&sideLabels=C9D1D9" alt="streak" />
-</div>
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=lyl224459&theme=discord&no-frame=true&column=7&margin-w=8&no-bg=true&title=Stars,Followers,Repositories,Commits,MultiLanguage,Experience,PullRequest" alt="trophy" />
+  <img src="https://img.shields.io/badge/📦_仓库-5-7C5CFC?style=for-the-badge&labelColor=0D1117" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/⭐_Stars-123-00CEC9?style=for-the-badge&labelColor=0D1117" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/👥_关注者-2-FD79A8?style=for-the-badge&labelColor=0D1117" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/👁️_正在关注-2-FDCB6E?style=for-the-badge&labelColor=0D1117" />
+  <br><br>
+  <img src="https://img.shields.io/badge/💜_Kotlin-85%25-7C5CFC?style=flat-square&logo=kotlin&logoColor=white&labelColor=0D1117" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/☕_Java-80%25-F89820?style=flat-square&logo=openjdk&logoColor=white&labelColor=0D1117" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/☁️_CloudSim-75%25-3B82F6?style=flat-square&logo=cloud&logoColor=white&labelColor=0D1117" />
 </div>
 
 ---
@@ -84,13 +87,21 @@
 ### 🛠️ 技术栈
 
 <div align="center">
-
-| 类别 | 技术 | 熟练度 |
-|:---:|------|:---:|
-| 💜 语言 | <img src="https://img.shields.io/badge/Kotlin-7C5CFC?style=flat&logo=kotlin&logoColor=white" /> | `████████░░` 85% |
-| ☕ 语言 | <img src="https://img.shields.io/badge/Java-F89820?style=flat&logo=openjdk&logoColor=white" /> | `████████░░` 80% |
-| ☁️ 框架 | <img src="https://img.shields.io/badge/CloudSim-3B82F6?style=flat&logo=cloud&logoColor=white" /> | `███████░░░` 75% |
-
+  <img src="https://img.shields.io/badge/Kotlin-7C5CFC?style=for-the-badge&logo=kotlin&logoColor=white" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Java-F89820?style=for-the-badge&logo=openjdk&logoColor=white" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/CloudSim-3B82F6?style=for-the-badge&logo=cloud&logoColor=white" />
+  <br><br>
+  <img src="https://img.shields.io/badge/批处理调度-FD79A8?style=flat-square" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/实时调度-00CEC9?style=flat-square" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/元启发式算法-6C5CE7?style=flat-square" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/群体智能-FDCB6E?style=flat-square" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/仿真平台-3B82F6?style=flat-square" />
 </div>
 
 ---
