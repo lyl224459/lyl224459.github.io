@@ -3,1378 +3,2088 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lyl224459 - GitHub 主页</title>
+    <title>lyl224459 | GitHub Homepage</title>
+    <meta name="description" content="lyl224459 的 GitHub 个人主页，聚焦云任务调度、推理应用工程与开源工具实践。">
+    <link rel="icon" id="siteFavicon" href="https://avatars.githubusercontent.com/u/60121811?v=4&s=64">
     <style>
-        /* ============ CSS 变量 ============ */
         :root {
-            --primary: #6c5ce7;
-            --primary-light: #a29bfe;
-            --secondary: #00cec9;
-            --accent: #fd79a8;
-            --bg-dark: #0c0c1d;
-            --bg-card: rgba(255, 255, 255, 0.05);
-            --glass-bg: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --text-primary: #e8e8f0;
-            --text-secondary: #b0b0c8;
-            --text-muted: #8888a0;
-            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
-            --radius-xl: 20px;
-            --radius-lg: 16px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
-            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg: #0f1419;
+            --bg-soft: #141b22;
+            --panel: #18212b;
+            --panel-strong: #1d2833;
+            --line: #2b3744;
+            --text: #f3f7fb;
+            --text-soft: #c9d3dc;
+            --text-muted: #92a0ad;
+            --teal: #2dd4bf;
+            --sky: #38bdf8;
+            --violet: #8b5cf6;
+            --amber: #f59e0b;
+            --coral: #fb7185;
+            --radius: 8px;
+            --shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+            --transition: 180ms ease;
         }
 
-        /* ============ 基础重置 ============ */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
+
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: var(--bg-dark);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background:
+                linear-gradient(180deg, rgba(56, 189, 248, 0.08), rgba(56, 189, 248, 0) 16rem),
+                linear-gradient(180deg, #0c1116 0%, var(--bg) 32rem, #111821 100%);
+            color: var(--text);
+            line-height: 1.6;
             min-height: 100vh;
-            line-height: 1.7;
-            color: var(--text-primary);
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ============ 星空粒子背景 ============ */
-        .particles-container {
+        body::before {
+            content: "";
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             pointer-events: none;
-            z-index: 0;
-        }
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: white;
-            animation: floatUp linear infinite;
-            opacity: 0;
-        }
-        @keyframes floatUp {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            80% {
-                opacity: 0.4;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1.5);
-                opacity: 0;
-            }
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 85%);
+            opacity: 0.45;
         }
 
-        /* ============ 动态渐变光晕 ============ */
-        .bg-orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(120px);
-            pointer-events: none;
-            z-index: 0;
-            animation: orbFloat 12s ease-in-out infinite;
-        }
-        .bg-orb--1 {
-            width: 500px;
-            height: 500px;
-            background: rgba(108, 92, 231, 0.25);
-            top: -15%;
-            left: -10%;
-            animation-delay: 0s;
-        }
-        .bg-orb--2 {
-            width: 400px;
-            height: 400px;
-            background: rgba(0, 206, 201, 0.2);
-            bottom: -10%;
-            right: -8%;
-            animation-delay: -4s;
-        }
-        .bg-orb--3 {
-            width: 350px;
-            height: 350px;
-            background: rgba(253, 121, 168, 0.2);
-            top: 40%;
-            left: 55%;
-            animation-delay: -8s;
-        }
-        @keyframes orbFloat {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            33% {
-                transform: translate(40px, -30px) scale(1.1);
-            }
-            66% {
-                transform: translate(-20px, 20px) scale(0.9);
-            }
+        a {
+            color: inherit;
         }
 
-        /* ============ 主容器 ============ */
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 1100px;
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .shell {
+            width: min(1180px, calc(100% - 32px));
             margin: 0 auto;
-            padding: 30px 24px 40px;
         }
 
-        /* ============ 头部导航条 (玻璃拟态) ============ */
-        .navbar {
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(16px);
+            background: rgba(12, 17, 22, 0.78);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .header-inner {
+            min-height: 72px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 28px;
-            margin-bottom: 36px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-xl);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-            animation: slideDown 0.7s ease forwards;
-        }
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .navbar .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-        .navbar .logo .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            color: white;
-            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
-        }
-        .navbar .nav-links {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .navbar .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: var(--transition);
-            white-space: nowrap;
-        }
-        .navbar .nav-links a:hover {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.08);
+            gap: 20px;
         }
 
-        /* ============ Hero 区域 ============ */
-        .hero {
-            text-align: center;
-            padding: 60px 20px 50px;
-            margin-bottom: 30px;
-            animation: fadeInUp 0.8s ease forwards;
-            animation-delay: 0.15s;
-            opacity: 0;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .hero .hero-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            margin: 0 auto 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            box-shadow: 0 12px 40px rgba(108, 92, 231, 0.45);
-            animation: pulse 3s ease-in-out infinite;
-            position: relative;
-        }
-        .hero .hero-avatar::after {
-            content: '';
-            position: absolute;
-            inset: -6px;
-            border-radius: 50%;
-            border: 2px solid rgba(108, 92, 231, 0.35);
-            animation: pulseRing 3s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 12px 40px rgba(108, 92, 231, 0.45);
-            }
-            50% {
-                box-shadow: 0 20px 60px rgba(108, 92, 231, 0.7);
-            }
-        }
-        @keyframes pulseRing {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.12);
-                opacity: 0.1;
-            }
-        }
-        .hero h1 {
-            font-size: 3.2em;
-            font-weight: 800;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, #fff 0%, var(--primary-light) 40%, var(--secondary) 70%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.3;
-            letter-spacing: -0.02em;
-        }
-        .hero .typewriter {
-            font-size: 1.25em;
-            color: var(--text-secondary);
-            min-height: 1.8em;
-            display: inline-block;
-        }
-        .hero .typewriter .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background: var(--secondary);
-            margin-left: 4px;
-            vertical-align: text-bottom;
-            animation: blink 0.7s steps(1) infinite;
-        }
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-        .hero .hero-badges {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 24px;
-        }
-        .hero .hero-badge {
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            color: var(--text-secondary);
-            transition: var(--transition);
-        }
-        .hero .hero-badge:hover {
-            border-color: var(--primary-light);
-            color: #fff;
-        }
-
-        /* ============ 分区标题 ============ */
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 30px;
-            animation: fadeInUp 0.7s ease forwards;
-            opacity: 0;
-        }
-        .section-title .icon-box {
-            width: 44px;
-            height: 44px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            flex-shrink: 0;
-        }
-        .icon-purple {
-            background: rgba(108, 92, 231, 0.2);
-        }
-        .icon-teal {
-            background: rgba(0, 206, 201, 0.2);
-        }
-        .icon-pink {
-            background: rgba(253, 121, 168, 0.2);
-        }
-        .icon-orange {
-            background: rgba(253, 176, 34, 0.2);
-        }
-
-        /* ============ 统计卡片 ============ */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            margin-bottom: 48px;
-        }
-        .stat-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: 28px 20px;
-            text-align: center;
-            transition: var(--transition);
-            animation: fadeInUp 0.7s ease forwards;
-            opacity: 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            border-radius: 3px 3px 0 0;
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        .stat-card:hover::before {
-            opacity: 1;
-        }
-        .stat-card:nth-child(1)::before {
-            background: var(--primary);
-        }
-        .stat-card:nth-child(2)::before {
-            background: var(--secondary);
-        }
-        .stat-card:nth-child(3)::before {
-            background: var(--accent);
-        }
-        .stat-card:nth-child(4)::before {
-            background: #fdcb6e;
-        }
-        .stat-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
-        }
-        .stat-card .stat-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .stat-card .stat-number {
-            font-size: 2.8em;
-            font-weight: 800;
-            background: linear-gradient(135deg, #fff, var(--primary-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.1;
-            margin-bottom: 6px;
-        }
-        .stat-card .stat-label {
-            font-size: 0.9em;
-            color: var(--text-muted);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        /* ============ 仓库卡片 ============ */
-        .repo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 22px;
-            margin-bottom: 48px;
-        }
-        .repo-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: 28px;
-            transition: var(--transition);
-            animation: fadeInUp 0.7s ease forwards;
-            opacity: 0;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-        .repo-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-        .repo-card .repo-header {
+        .header-actions {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 14px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
-        .repo-card .repo-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: var(--radius-sm);
-            display: flex;
+
+        .brand {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.3em;
-            flex-shrink: 0;
-        }
-        .repo-icon--benchmark {
-            background: rgba(108, 92, 231, 0.2);
-        }
-        .repo-icon--schedule {
-            background: rgba(0, 206, 201, 0.2);
-        }
-        .repo-card h3 {
-            font-size: 1.25em;
+            gap: 12px;
+            text-decoration: none;
             font-weight: 700;
-            color: #fff;
         }
-        .repo-card .repo-desc {
-            color: var(--text-secondary);
-            font-size: 0.95em;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            flex-grow: 1;
+
+        .brand-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            object-fit: cover;
+            flex: 0 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.12);
+            background: rgba(255, 255, 255, 0.05);
         }
-        .repo-card .repo-meta {
+
+        .brand-text {
             display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            font-size: 0.85em;
-            color: var(--text-muted);
-            margin-bottom: 18px;
+            flex-direction: column;
+            gap: 2px;
         }
-        .repo-card .repo-meta span {
+
+        .brand-title {
+            font-size: 0.98rem;
+        }
+
+        .brand-subtitle {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+        }
+
+        .header-nav {
             display: flex;
             align-items: center;
-            gap: 5px;
-        }
-        .repo-card .repo-meta .lang-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .lang-dot--kotlin {
-            background: #7c5cfc;
-            box-shadow: 0 0 8px rgba(124, 92, 252, 0.6);
-        }
-        .lang-dot--java {
-            background: #f89820;
-            box-shadow: 0 0 8px rgba(248, 152, 32, 0.6);
-        }
-        .repo-card .repo-tags {
-            display: flex;
-            gap: 6px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 18px;
+            justify-content: flex-end;
         }
-        .repo-card .repo-tag {
-            font-size: 0.75em;
-            padding: 4px 10px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.06);
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .lang-button {
+            min-width: 44px;
+            min-height: 32px;
+            padding: 0 10px;
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
             color: var(--text-muted);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: var(--transition);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.86rem;
+            font-weight: 700;
+            transition: background-color var(--transition), color var(--transition);
         }
-        .repo-card .repo-tag:hover {
-            border-color: rgba(255, 255, 255, 0.25);
-            color: #fff;
+
+        .lang-button:hover,
+        .lang-button:focus-visible {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            outline: none;
         }
-        .repo-card .repo-link {
+
+        .lang-button.is-active {
+            background: rgba(45, 212, 191, 0.16);
+            color: var(--text);
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: var(--text-soft);
+            padding: 9px 12px;
+            border-radius: var(--radius);
+            transition: background-color var(--transition), color var(--transition);
+            font-size: 0.92rem;
+        }
+
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            outline: none;
+        }
+
+        .nav-cta {
+            border: 1px solid rgba(45, 212, 191, 0.34);
+        }
+
+        .hero {
+            padding: 72px 0 56px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+            gap: 32px;
+            align-items: start;
+        }
+
+        .hero-grid > *,
+        .overview-grid > *,
+        .focus-grid > *,
+        .project-grid > *,
+        .activity-grid > * {
+            min-width: 0;
+        }
+
+        .eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, var(--primary), #5b4cc4);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: var(--transition);
-            align-self: flex-start;
-            box-shadow: 0 4px 16px rgba(108, 92, 231, 0.35);
-            white-space: nowrap;
-        }
-        .repo-card .repo-link:hover {
-            box-shadow: 0 8px 28px rgba(108, 92, 231, 0.55);
-            transform: translateX(3px);
-        }
-        .repo-card .repo-link:active {
-            transform: scale(0.97);
-        }
-
-        /* ============ 技术栈 ============ */
-        .tech-section {
-            margin-bottom: 48px;
-        }
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 16px;
-        }
-        .tech-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: 24px 18px;
-            text-align: center;
-            transition: var(--transition);
-            animation: fadeInUp 0.7s ease forwards;
-            opacity: 0;
-        }
-        .tech-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
-        }
-        .tech-card .tech-icon {
-            font-size: 2.6em;
-            margin-bottom: 12px;
-            display: block;
-        }
-        .tech-card .tech-name {
+            color: var(--teal);
             font-weight: 700;
-            color: #fff;
-            font-size: 1.05em;
-            margin-bottom: 10px;
-        }
-        .tech-card .tech-bar {
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            margin-top: 6px;
-        }
-        .tech-card .tech-bar-fill {
-            height: 100%;
-            border-radius: 4px;
-            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 0;
-        }
-        .tech-bar-fill--kotlin {
-            background: linear-gradient(90deg, #7c5cfc, #a29bfe);
-        }
-        .tech-bar-fill--java {
-            background: linear-gradient(90deg, #f89820, #fdcb6e);
-        }
-        .tech-bar-fill--cloudsim {
-            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 18px;
         }
 
-        /* ============ 活动时间线 ============ */
-        .activity-section {
-            margin-bottom: 48px;
-        }
-        .timeline {
-            position: relative;
-            padding-left: 32px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 13px;
-            top: 8px;
-            bottom: 8px;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary-light), var(--secondary), var(--accent));
-            border-radius: 2px;
-        }
-        .timeline-item {
-            position: relative;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            padding: 20px 24px;
+        .hero-title {
+            font-size: 3.4rem;
+            line-height: 1.05;
             margin-bottom: 16px;
-            transition: var(--transition);
-            animation: fadeInUp 0.7s ease forwards;
-            opacity: 0;
-        }
-        .timeline-item:hover {
-            border-color: rgba(255, 255, 255, 0.25);
-            transform: translateX(4px);
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -26px;
-            top: 24px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary-light);
-            box-shadow: 0 0 12px rgba(162, 155, 254, 0.5);
-            border: 2px solid var(--bg-dark);
-        }
-        .timeline-item:nth-child(2)::before {
-            background: var(--secondary);
-            box-shadow: 0 0 12px rgba(0, 206, 201, 0.5);
-        }
-        .timeline-item:nth-child(3)::before {
-            background: var(--accent);
-            box-shadow: 0 0 12px rgba(253, 121, 168, 0.5);
-        }
-        .timeline-item .timeline-title {
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 4px;
-        }
-        .timeline-item .timeline-desc {
-            color: var(--text-secondary);
-            font-size: 0.9em;
+            text-wrap: balance;
+            overflow-wrap: anywhere;
         }
 
-        /* ============ 联系区域 ============ */
-        .contact-section {
-            margin-bottom: 30px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-xl);
-            padding: 44px 36px;
-            text-align: center;
-            animation: fadeInUp 0.8s ease forwards;
-            opacity: 0;
-            position: relative;
-            overflow: hidden;
+        .hero-title span {
+            color: var(--sky);
         }
-        .contact-section::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(108, 92, 231, 0.08), transparent, rgba(0, 206, 201, 0.08), transparent);
-            animation: conicSpin 10s linear infinite;
-            pointer-events: none;
+
+        .hero-lead {
+            font-size: 1.12rem;
+            color: var(--text-soft);
+            max-width: 700px;
+            margin-bottom: 24px;
+            overflow-wrap: anywhere;
         }
-        @keyframes conicSpin {
-            to {
-                transform: rotate(360deg);
-            }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
         }
-        .contact-section > * {
-            position: relative;
-            z-index: 1;
-        }
-        .contact-section h2 {
-            font-size: 1.6em;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-        .contact-section p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-        .contact-btn {
+
+        .hero-tag {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 14px 32px;
-            font-size: 1.05em;
-            font-weight: 600;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            box-shadow: 0 6px 24px rgba(108, 92, 231, 0.4);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-        }
-        .contact-btn:hover {
-            box-shadow: 0 10px 36px rgba(108, 92, 231, 0.6);
-            transform: translateY(-2px);
-        }
-        .contact-btn:active {
-            transform: scale(0.97);
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-soft);
+            font-size: 0.88rem;
+            max-width: 100%;
+            overflow-wrap: anywhere;
         }
 
-        /* ============ 页脚 ============ */
-        footer {
-            text-align: center;
-            padding: 24px;
-            color: var(--text-muted);
-            font-size: 0.9em;
-            animation: fadeInUp 0.7s ease forwards;
-            opacity: 0;
-        }
-        footer .heart {
-            color: var(--accent);
-            animation: heartBeat 1.2s ease-in-out infinite;
-            display: inline-block;
-        }
-        @keyframes heartBeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            25% {
-                transform: scale(1.2);
-            }
-            50% {
-                transform: scale(1);
-            }
-            75% {
-                transform: scale(1.15);
-            }
-        }
-
-        /* ============ 回到顶部按钮 ============ */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 100;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            color: #fff;
-            font-size: 1.3em;
-            cursor: pointer;
+        .hero-actions {
             display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .button {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-        .back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-        .back-to-top:hover {
-            border-color: rgba(255, 255, 255, 0.35);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+            min-height: 44px;
+            padding: 0 18px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform var(--transition), background-color var(--transition), border-color var(--transition);
         }
 
-        /* ============ 响应式 ============ */
-        @media (max-width: 768px) {
-            .container {
-                padding: 16px 12px 30px;
-            }
-            .navbar {
-                padding: 12px 16px;
-                margin-bottom: 24px;
-                border-radius: var(--radius-lg);
-            }
-            .navbar .logo {
-                font-size: 1em;
-            }
-            .navbar .logo .avatar {
-                width: 32px;
-                height: 32px;
-                font-size: 1em;
-            }
-            .navbar .nav-links a {
-                padding: 6px 10px;
-                font-size: 0.8em;
-            }
-            .hero {
-                padding: 40px 10px 36px;
-            }
-            .hero .hero-avatar {
-                width: 80px;
-                height: 80px;
-                font-size: 2.4em;
-                margin-bottom: 18px;
-            }
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            .hero .typewriter {
-                font-size: 1.05em;
-            }
-            .section-title {
-                font-size: 1.4em;
-                gap: 10px;
-                margin-bottom: 20px;
-            }
-            .section-title .icon-box {
-                width: 36px;
-                height: 36px;
-                font-size: 1em;
-            }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-            .stat-card {
-                padding: 20px 14px;
-                border-radius: var(--radius-md);
-            }
-            .stat-card .stat-number {
-                font-size: 2.2em;
-            }
-            .repo-grid {
+        .button:hover,
+        .button:focus-visible {
+            transform: translateY(-1px);
+            outline: none;
+        }
+
+        .button-primary {
+            background: var(--teal);
+            color: #06251f;
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text);
+        }
+
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            max-width: 620px;
+        }
+
+        .hero-metric {
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+        }
+
+        .hero-metric dt {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            margin-bottom: 6px;
+        }
+
+        .hero-metric dd {
+            font-size: 1.65rem;
+            font-weight: 800;
+        }
+
+        .profile-panel {
+            background: rgba(24, 33, 43, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .profile-photo {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            background: #0d1117;
+        }
+
+        .profile-panel-body {
+            padding: 22px;
+        }
+
+        .profile-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .profile-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        .profile-handle {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .profile-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(45, 212, 191, 0.12);
+            color: var(--teal);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .profile-status::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: currentColor;
+        }
+
+        .profile-summary {
+            color: var(--text-soft);
+            margin-bottom: 18px;
+        }
+
+        .profile-details {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .profile-details li {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 12px;
+        }
+
+        .profile-details span {
+            color: var(--text-muted);
+        }
+
+        .profile-details strong {
+            text-align: right;
+            font-weight: 700;
+        }
+
+        .section {
+            padding: 40px 0;
+        }
+
+        .section + .section {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .section-heading h2 {
+            font-size: 1.9rem;
+            margin-bottom: 6px;
+        }
+
+        .section-heading p {
+            color: var(--text-soft);
+            max-width: 700px;
+        }
+
+        .section-note {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            white-space: normal;
+        }
+
+        .overview-grid,
+        .focus-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .overview-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .focus-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .tile,
+        .focus-item,
+        .project-card,
+        .activity-card,
+        .contact-band {
+            background: rgba(24, 33, 43, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+        }
+
+        .tile,
+        .focus-item,
+        .activity-card {
+            padding: 18px;
+        }
+
+        .tile {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tile::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--sky);
+        }
+
+        .tile:nth-child(2)::before {
+            background: var(--teal);
+        }
+
+        .tile:nth-child(3)::before {
+            background: var(--amber);
+        }
+
+        .tile:nth-child(4)::before {
+            background: var(--coral);
+        }
+
+        .tile-label {
+            color: var(--text-muted);
+            font-size: 0.84rem;
+            margin-bottom: 10px;
+        }
+
+        .tile-value {
+            font-size: 2rem;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .tile-copy {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+        }
+
+        .focus-index {
+            display: inline-flex;
+            min-width: 34px;
+            min-height: 34px;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-weight: 800;
+            margin-bottom: 14px;
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .focus-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .focus-item p {
+            color: var(--text-soft);
+            margin-bottom: 16px;
+        }
+
+        .focus-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            color: var(--text-soft);
+        }
+
+        .focus-list li {
+            display: flex;
+            gap: 10px;
+        }
+
+        .focus-list li::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            margin-top: 0.58rem;
+            flex: 0 0 auto;
+            background: var(--teal);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .project-card {
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #0d1117;
+        }
+
+        .project-card-body {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .project-topline,
+        .project-meta,
+        .project-tags,
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .project-language,
+        .project-pill,
+        .language-chip,
+        .topic-chip {
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            padding: 0 10px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-soft);
+        }
+
+        .project-title {
+            font-size: 1.22rem;
+            font-weight: 800;
+            overflow-wrap: anywhere;
+        }
+
+        .project-desc {
+            color: var(--text-soft);
+            overflow-wrap: anywhere;
+        }
+
+        .project-meta {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .project-actions a {
+            min-height: 40px;
+            padding: 0 14px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .project-link-primary {
+            background: rgba(56, 189, 248, 0.16);
+            color: #aee7ff;
+        }
+
+        .project-link-secondary {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-soft);
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+            gap: 18px;
+        }
+
+        .activity-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .activity-item {
+            padding: 16px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .activity-item:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .activity-title-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
+        .activity-title {
+            font-weight: 700;
+        }
+
+        .activity-date {
+            color: var(--text-muted);
+            font-size: 0.84rem;
+            white-space: nowrap;
+        }
+
+        .activity-desc {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+        }
+
+        .language-stack {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .language-row {
+            display: grid;
+            gap: 8px;
+        }
+
+        .language-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            color: var(--text-soft);
+            font-size: 0.92rem;
+        }
+
+        .language-bar {
+            width: 100%;
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        .language-fill {
+            height: 100%;
+            border-radius: inherit;
+        }
+
+        .topic-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .topic-chip {
+            min-height: 32px;
+        }
+
+        .contact-band {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .contact-band h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-band p {
+            color: var(--text-soft);
+            max-width: 720px;
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .footer {
+            padding: 22px 0 32px;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius);
+            background: rgba(17, 24, 31, 0.92);
+            color: var(--text);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--transition), visibility var(--transition), transform var(--transition);
+        }
+
+        .back-to-top.is-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover,
+        .back-to-top:focus-visible {
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        @media (max-width: 980px) {
+            .hero-grid,
+            .activity-grid,
+            .project-grid,
+            .focus-grid,
+            .overview-grid,
+            .contact-band,
+            .footer-inner {
                 grid-template-columns: 1fr;
-                gap: 16px;
+                display: grid;
             }
-            .repo-card {
-                padding: 20px;
-                border-radius: var(--radius-md);
+
+            .header-inner {
+                padding: 14px 0;
+                align-items: start;
             }
-            .tech-grid {
-                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-                gap: 12px;
+
+            .header-nav {
+                justify-content: flex-start;
             }
-            .timeline {
-                padding-left: 26px;
+
+            .header-actions {
+                justify-content: flex-start;
             }
-            .timeline::before {
-                left: 9px;
+
+            .section-heading {
+                align-items: start;
+                flex-direction: column;
             }
-            .timeline-item {
-                padding: 16px 18px;
+
+            .contact-actions {
+                justify-content: flex-start;
             }
-            .timeline-item::before {
-                left: -22px;
-                top: 20px;
-                width: 10px;
-                height: 10px;
+        }
+
+        @media (max-width: 720px) {
+            .shell {
+                width: min(1180px, calc(100% - 20px));
             }
-            .contact-section {
-                padding: 32px 20px;
-                border-radius: var(--radius-lg);
+
+            .hero {
+                padding: 52px 0 34px;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .hero-lead {
+                font-size: 1rem;
+            }
+
+            .hero-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 28px 0;
+            }
+
+            .section-heading h2,
+            .contact-band h2 {
+                font-size: 1.55rem;
+            }
+
+            .project-card-body,
+            .tile,
+            .focus-item,
+            .activity-card,
+            .contact-band,
+            .profile-panel-body {
+                padding: 16px;
+            }
+
+            .profile-details li,
+            .activity-title-row {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .profile-details strong {
+                text-align: left;
+            }
+
+            .back-to-top {
+                right: 16px;
+                bottom: 16px;
             }
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 10px 8px 24px;
+            .shell {
+                width: min(1180px, calc(100% - 16px));
             }
-            .navbar {
-                padding: 10px 12px;
-                border-radius: var(--radius-md);
-                gap: 8px;
-                flex-wrap: wrap;
-                justify-content: center;
+
+            .header-inner {
+                gap: 12px;
             }
-            .hero {
-                padding: 28px 6px 24px;
-            }
-            .hero h1 {
-                font-size: 1.7em;
-            }
-            .hero .typewriter {
-                font-size: 0.95em;
-            }
-            .hero .hero-badges {
+
+            .header-nav {
                 gap: 6px;
             }
-            .hero .hero-badge {
-                font-size: 0.75em;
-                padding: 5px 12px;
-            }
-            .section-title {
-                font-size: 1.2em;
-            }
-            .section-title .icon-box {
-                width: 32px;
-                height: 32px;
-                font-size: 0.9em;
-                border-radius: var(--radius-sm);
-            }
-            .stats-grid {
-                gap: 8px;
-            }
-            .stat-card {
-                padding: 16px 10px;
-            }
-            .stat-card .stat-number {
-                font-size: 1.8em;
-            }
-            .stat-card .stat-label {
-                font-size: 0.75em;
-            }
-            .stat-card .stat-icon {
-                font-size: 1.5em;
-            }
-            .repo-card {
-                padding: 16px;
-            }
-            .repo-card h3 {
-                font-size: 1.1em;
-            }
-            .repo-card .repo-desc {
-                font-size: 0.85em;
-            }
-            .repo-card .repo-link {
-                font-size: 0.85em;
-                padding: 10px 18px;
-            }
-            .tech-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 8px;
-            }
-            .tech-card {
-                padding: 16px 10px;
-                border-radius: var(--radius-md);
-            }
-            .tech-card .tech-icon {
-                font-size: 2em;
-                margin-bottom: 8px;
-            }
-            .tech-card .tech-name {
-                font-size: 0.9em;
-            }
-            .timeline {
-                padding-left: 22px;
-            }
-            .timeline::before {
-                left: 7px;
-            }
-            .timeline-item {
-                padding: 14px 14px;
-            }
-            .timeline-item::before {
-                left: -19px;
-                top: 18px;
-                width: 8px;
-                height: 8px;
-            }
-            .contact-section {
-                padding: 24px 14px;
-                border-radius: var(--radius-md);
-            }
-            .contact-section h2 {
-                font-size: 1.3em;
-            }
-            .contact-btn {
-                padding: 12px 24px;
-                font-size: 0.9em;
-            }
-            .back-to-top {
-                bottom: 20px;
-                right: 16px;
-                width: 40px;
-                height: 40px;
-                font-size: 1.1em;
-            }
-        }
 
-        @media (max-width: 360px) {
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
+            .header-nav a {
+                padding: 8px 10px;
+                font-size: 0.88rem;
             }
-            .tech-grid {
-                grid-template-columns: repeat(3, 1fr);
+
+            .lang-button {
+                min-width: 40px;
+                min-height: 30px;
             }
-            .hero h1 {
-                font-size: 1.5em;
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-tags {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .hero-tag {
+                width: 100%;
+            }
+
+            .hero-tags,
+            .hero-actions,
+            .project-topline,
+            .project-meta,
+            .project-tags,
+            .project-actions,
+            .contact-actions {
+                gap: 8px;
+            }
+
+            .tile-value {
+                font-size: 1.65rem;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- 背景光晕 -->
-    <div class="bg-orb bg-orb--1"></div>
-    <div class="bg-orb bg-orb--2"></div>
-    <div class="bg-orb bg-orb--3"></div>
-
-    <!-- 粒子容器 -->
-    <div class="particles-container" id="particles"></div>
-
-    <!-- 主容器 -->
-    <div class="container">
-
-        <!-- 导航栏 -->
-        <nav class="navbar">
-            <a href="#" class="logo">
-                <div class="avatar">👨‍💻</div>
-                <span>lyl224459</span>
+    <header class="site-header">
+        <div class="shell header-inner">
+            <a class="brand" href="#top">
+                <img
+                    class="brand-avatar"
+                    id="brandAvatar"
+                    src="https://avatars.githubusercontent.com/u/60121811?v=4"
+                    alt="lyl224459 avatar"
+                >
+                <span class="brand-text">
+                    <span class="brand-title">lyl224459</span>
+                    <span class="brand-subtitle" data-i18n="brandSubtitle">GitHub Homepage</span>
+                </span>
             </a>
-            <div class="nav-links">
-                <a href="#stats">统计</a>
-                <a href="#repos">项目</a>
-                <a href="#tech">技术栈</a>
-                <a href="#activity">动态</a>
-                <a href="#contact">联系</a>
+            <div class="header-actions">
+                <nav class="header-nav" aria-label="页面导航">
+                    <a href="#overview" data-i18n="navOverview">概览</a>
+                    <a href="#focus" data-i18n="navFocus">方向</a>
+                    <a href="#projects" data-i18n="navProjects">项目</a>
+                    <a href="#activity" data-i18n="navActivity">动态</a>
+                    <a href="#contact" class="nav-cta" data-i18n="navContact">联系</a>
+                </nav>
+                <div class="lang-switcher" aria-label="Language switcher">
+                    <button class="lang-button is-active" type="button" data-lang="zh" aria-pressed="true">中</button>
+                    <button class="lang-button" type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
             </div>
-        </nav>
+        </div>
+    </header>
 
-        <!-- Hero 区域 -->
+    <main id="top">
         <section class="hero">
-            <div class="hero-avatar">🚀</div>
-            <h1></h1>你好，我是lyl224459</h1>
-            <div class="typewriter">
-                <span id="typewriter-text"></span><span class="cursor"></span>
-            </div>
-            <div class="hero-badges">
-                <span class="hero-badge">☁️ 云计算研究</span>
-                <span class="hero-badge">🤖 群体智能算法</span>
-                <span class="hero-badge">📊 任务调度优化</span>
+            <div class="shell hero-grid">
+                <div>
+                    <p class="eyebrow" data-i18n="heroEyebrow">GitHub Profile</p>
+                    <h1 class="hero-title" data-i18n-html="heroTitle">把研究、工程和开源，放进同一个 <span>主页</span>。</h1>
+                    <p class="hero-lead" id="heroLead">专注云任务调度、桌面端推理应用和开源工具实践，持续把想法做成可复现、可交付的项目。</p>
+                    <div class="hero-tags">
+                        <span class="hero-tag" data-i18n="heroTag1">CloudSim / CloudSim Plus</span>
+                        <span class="hero-tag" data-i18n="heroTag2">Kotlin / Java</span>
+                        <span class="hero-tag" data-i18n="heroTag3">Qt Quick / OpenCV / ONNX Runtime</span>
+                        <span class="hero-tag" data-i18n="heroTag4">Open Source Tooling</span>
+                    </div>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="https://github.com/lyl224459" target="_blank" rel="noopener me" data-i18n="heroPrimaryCta">查看 GitHub</a>
+                        <a class="button button-secondary" href="#projects" data-i18n="heroSecondaryCta">浏览精选项目</a>
+                    </div>
+                    <dl class="hero-metrics">
+                        <div class="hero-metric">
+                            <dt data-i18n="heroMetricRepos">公开仓库</dt>
+                            <dd id="heroRepos">10</dd>
+                        </div>
+                        <div class="hero-metric">
+                            <dt data-i18n="heroMetricFollowers">关注者</dt>
+                            <dd id="heroFollowers">2</dd>
+                        </div>
+                        <div class="hero-metric">
+                            <dt data-i18n="heroMetricStars">累计 Star</dt>
+                            <dd id="heroStars">5</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <aside class="profile-panel" aria-label="GitHub 资料卡" data-aria-label-zh="GitHub 资料卡" data-aria-label-en="GitHub profile card">
+                    <img
+                        class="profile-photo"
+                        id="profilePhoto"
+                        src="https://avatars.githubusercontent.com/u/60121811?v=4"
+                        alt="lyl224459 GitHub avatar"
+                    >
+                    <div class="profile-panel-body">
+                        <div class="profile-row">
+                            <div>
+                                <div class="profile-name" id="profileName">lyl224459</div>
+                                <div class="profile-handle" id="profileHandle">@lyl224459</div>
+                            </div>
+                            <div class="profile-status" data-i18n="profileStatus">公开主页</div>
+                        </div>
+                        <p class="profile-summary" id="profileSummary">专注云计算调度实验、YOLO 推理应用和开源工具实践。</p>
+                        <ul class="profile-details">
+                            <li>
+                                <span data-i18n="profileLocationLabel">位置</span>
+                                <strong id="profileLocation">Bekasi, Indonesia</strong>
+                            </li>
+                            <li>
+                                <span data-i18n="profileFocusLabel">主要方向</span>
+                                <strong data-i18n="profileFocusValue">任务调度 / 推理应用 / 工具链</strong>
+                            </li>
+                            <li>
+                                <span data-i18n="profileUpdatedLabel">最近活跃</span>
+                                <strong id="profileUpdated">2026-05-16</strong>
+                            </li>
+                            <li>
+                                <span data-i18n="profileStateLabel">主页状态</span>
+                                <strong id="profileDataState">使用本地快照</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <!-- 统计 -->
-        <section id="stats">
-            <div class="section-title" style="animation-delay: 0.2s;">
-                <div class="icon-box icon-purple">📊</div>
-                数据总览
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card" style="animation-delay: 0.25s;">
-                    <span class="stat-icon">📦</span>
-                    <div class="stat-number" data-target="5">0</div>
-                    <div class="stat-label">仓库</div>
-                </div>
-                <div class="stat-card" style="animation-delay: 0.3s;">
-                    <span class="stat-icon">⭐</span>
-                    <div class="stat-number" data-target="123">0</div>
-                    <div class="stat-label">Stars</div>
-                </div>
-                <div class="stat-card" style="animation-delay: 0.35s;">
-                    <span class="stat-icon">👥</span>
-                    <div class="stat-number" data-target="2">0</div>
-                    <div class="stat-label">关注者</div>
-                </div>
-                <div class="stat-card" style="animation-delay: 0.4s;">
-                    <span class="stat-icon">👁️</span>
-                    <div class="stat-number" data-target="2">0</div>
-                    <div class="stat-label">正在关注</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 热门仓库 -->
-        <section id="repos">
-            <div class="section-title" style="animation-delay: 0.45s;">
-                <div class="icon-box icon-teal">🔥</div>
-                热门仓库
-            </div>
-            <div class="repo-grid">
-                <div class="repo-card" style="animation-delay: 0.5s;">
-                    <div class="repo-header">
-                        <div class="repo-icon repo-icon--benchmark">🌐</div>
-                        <h3>CloudSim-Benchmark</h3>
-                    </div>
-                    <p class="repo-desc">基于 CloudSim Plus 和 Kotlin 开发的云任务调度算法对比实验平台，支持批处理和实时调度两种模式，集成了多种群体智能优化算法。</p>
-                    <div class="repo-tags">
-                        <span class="repo-tag">#调度算法</span>
-                        <span class="repo-tag">#群体智能</span>
-                        <span class="repo-tag">#批处理</span>
-                        <span class="repo-tag">#实时调度</span>
-                    </div>
-                    <div class="repo-meta">
-                        <span><span class="lang-dot lang-dot--kotlin">Kotlin</span></span>
-                        <span>⭐ 热门项目</span>
-                        <span>🔷 CloudSim Plus</span>
-                    </div>
-                    <a href="https://github.com/lyl224459/CloudSim-Benchmark" target="_blank" rel="noopener" class="repo-link">
-                        <span>查看仓库</span>
-                    </a>
-                </div>
-
-                <div class="repo-card" style="animation-delay: 0.55s;">
-                    <div class="repo-header">
-                        <div class="repo-icon repo-icon--schedule">📋</div>
-                        <h3>Cloudlet-Schedule</h3>
-                    </div>
-                    <p class="repo-desc">基于 CloudSim 5.0 框架的云计算任务调度仿真平台，实现了多种元启发式优化算法和传统调度算法，用于解决云环境下的任务调度问题。</p>
-                    <div class="repo-tags">
-                        <span class="repo-tag">#元启发式</span>
-                        <span class="repo-tag">#仿真平台</span>
-                        <span class="repo-tag">#任务调度</span>
-                        <span class="repo-tag">#优化算法</span>
-                    </div>
-                    <div class="repo-meta">
-                        <span class="lang-dot lang-dot--java"> Java</span>
-                        <span>⭐ 热门项目</span>
-                        <span>☕ CloudSim 5.0</span>
-                    </div>
-                    <a href="https://github.com/lyl224459/Cloudlet-Schedule" target="_blank" rel="noopener" class="repo-link">
-                        <span>查看仓库</span></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 技术栈 -->
-        <section id="tech" class="tech-section">
-            <div class="section-title" style="animation-delay: 0.6s;">
-                <div class="icon-box icon-pink">🛠️</div>
-                技术栈
-            </div>
-            <div class="tech-grid">
-                <div class="tech-card" style="animation-delay: 0.65s;">
-                    <span class="tech-icon">💜</span>
-                    <div class="tech-name">Kotlin</div>
-                    <div class="tech-bar">
-                        <div class="tech-bar-fill tech-bar-fill--kotlin" data-width="85"></div>
+        <section class="section" id="overview">
+            <div class="shell">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow" data-i18n="overviewEyebrow">Overview</p>
+                        <h2 data-i18n="overviewTitle">现在的技术画像</h2>
+                        <p data-i18n="overviewDesc">把 GitHub 上的公开资料整理成一眼能看懂的全局概览，方便别人快速判断你最近在做什么、擅长什么。</p>
                     </div>
                 </div>
-                <div class="tech-card" style="animation-delay: 0.7s;">
-                    <span class="tech-icon">☕</span>
-                    <div class="tech-name">Java</div>
-                    <div class="tech-bar">
-                        <div class="tech-bar-fill tech-bar-fill--java" data-width="80"></div>
-                    </div>
-                </div>
-                <div class="tech-card" style="animation-delay: 0.75s;">
-                    <span class="tech-icon">☁️</span>
-                    <div class="tech-name">CloudSim</div>
-                    <div class="tech-bar">
-                        <div class="tech-bar-fill tech-bar-fill--cloudsim" data-width="75"></div>
-                    </div>
+                <div class="overview-grid">
+                    <article class="tile">
+                        <div class="tile-label" data-i18n="tileReposLabel">Public Repositories</div>
+                        <div class="tile-value" id="statRepos">10</div>
+                        <p class="tile-copy" id="tileReposCopy">公开仓库数量，来自 GitHub 个人主页。</p>
+                    </article>
+                    <article class="tile">
+                        <div class="tile-label" data-i18n="tileStarsLabel">Total Stars</div>
+                        <div class="tile-value" id="statStars">5</div>
+                        <p class="tile-copy" id="tileStarsCopy">累计公开 Star，用来快速感知项目关注度。</p>
+                    </article>
+                    <article class="tile">
+                        <div class="tile-label" data-i18n="tileStackLabel">Primary Stack</div>
+                        <div class="tile-value" id="statStack">C++</div>
+                        <p class="tile-copy" id="statStackCopy">近期活跃仓库覆盖 C++、Java、Kotlin、TypeScript 与 HTML。</p>
+                    </article>
+                    <article class="tile">
+                        <div class="tile-label" data-i18n="tileLatestRepoLabel">Latest Active Repo</div>
+                        <div class="tile-value" id="statLatestRepo">NeonSight</div>
+                        <p class="tile-copy" id="statLatestRepoCopy">最近更新的公开项目。</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- 活动时间线 -->
-        <section id="activity" class="activity-section">
-            <div class="section-title" style="animation-delay: 0.8s;">
-                <div class="icon-box icon-orange">📈</div>
-                研究动态
-            </div>
-            <div class="timeline">
-                <div class="timeline-item" style="animation-delay: 0.85s;">
-                    <div class="timeline-title">🔬 云任务调度算法对比实验平台</div>
-                    <div class="timeline-desc">基于 CloudSim Plus 和 Kotlin 构建完整的实验框架，支持多种群体智能优化算法的对比分析</div>
+        <section class="section" id="focus">
+            <div class="shell">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow" data-i18n="focusEyebrow">Focus</p>
+                        <h2 data-i18n="focusTitle">我会把什么东西做深</h2>
+                        <p data-i18n="focusDesc">这个区块不只是列关键词，而是把你的长期方向、工程肌肉和最近的项目重心放在一起讲清楚。</p>
+                    </div>
                 </div>
-                <div class="timeline-item" style="animation-delay: 0.9s;">
-                    <div class="timeline-title">📡 元启发式优化算法研究</div>
-                    <div class="timeline-desc">深入探索粒子群、蚁群、遗传等算法在云计算资源调度中的应用与改进</div>
-                </div>
-                <div class="timeline-item" style="animation-delay: 0.95s;">
-                    <div class="timeline-title">📚 持续开源贡献</div>
-                    <div class="timeline-desc">维护多个云计算仿真相关的开源项目，欢迎社区贡献和交流</div>
+                <div class="focus-grid">
+                    <article class="focus-item">
+                        <div class="focus-index">01</div>
+                        <h3 data-i18n="focusCard1Title">云任务调度实验平台</h3>
+                        <p data-i18n="focusCard1Desc">围绕 CloudSim / CloudSim Plus 搭建可复现实验环境，把算法对比、批处理与实时调度研究放在统一框架里。</p>
+                        <ul class="focus-list">
+                            <li data-i18n="focusCard1Item1">CloudSim Benchmark 与 Cloudlet Schedule 双线积累</li>
+                            <li data-i18n="focusCard1Item2">元启发式与群体智能算法对比实验</li>
+                            <li data-i18n="focusCard1Item3">偏向研究可复现与实验流程清晰</li>
+                        </ul>
+                    </article>
+                    <article class="focus-item">
+                        <div class="focus-index">02</div>
+                        <h3 data-i18n="focusCard2Title">桌面端推理应用工程</h3>
+                        <p data-i18n="focusCard2Desc">最近的重心已经延展到 Windows 桌面端视觉推理应用，把模型接入、界面交互和交付流程一并打通。</p>
+                        <ul class="focus-list">
+                            <li data-i18n="focusCard2Item1">Qt Quick、OpenCV 与 ONNX Runtime 的组合实践</li>
+                            <li data-i18n="focusCard2Item2">Windows x64 包装、参数调节、结果导出</li>
+                            <li data-i18n="focusCard2Item3">关注真实部署场景下的稳定性与可试用性</li>
+                        </ul>
+                    </article>
+                    <article class="focus-item">
+                        <div class="focus-index">03</div>
+                        <h3 data-i18n="focusCard3Title">开源工具与本地化</h3>
+                        <p data-i18n="focusCard3Desc">除了研究项目，也会做贴近日常工作流的工具和翻译，让开源项目更容易真正被中文用户拿来使用。</p>
+                        <ul class="focus-list">
+                            <li data-i18n="focusCard3Item1">Obsidian 插件汉化与文档整理</li>
+                            <li data-i18n="focusCard3Item2">自动化脚本与效率工具的实用型项目</li>
+                            <li data-i18n="focusCard3Item3">注重完整体验，而不只是把代码放上去</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- 联系 -->
-        <section id="contact" class="contact-section" style="animation-delay: 1s;">
-            <h2>📫 联系我</h2>
-            <p>如果你对我的研究感兴趣，或者有任何问题，欢迎在 GitHub 上与我交流</p>
-            <a href="https://github.com/lyl224459" target="_blank" rel="noopener" class="contact-btn">
-                <span>🐙 </span>GitHub: @lyl224459 <span></span>
-            </a>
+        <section class="section" id="projects">
+            <div class="shell">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow" data-i18n="projectsEyebrow">Featured Repositories</p>
+                        <h2 data-i18n="projectsTitle">精选项目</h2>
+                        <p data-i18n="projectsDesc">默认展示最能代表当前能力结构的仓库，同时优先拉取 GitHub 最新公开数据，避免首页内容停在过去。</p>
+                    </div>
+                    <div class="section-note" id="projectsStatus">正在准备项目数据...</div>
+                </div>
+                <div class="project-grid" id="projectGrid"></div>
+            </div>
         </section>
 
-        <!-- 页脚 -->
-        <footer style="animation-delay: 1.05s;">
-            <p>Made</p> with <span class="heart">❤️</span> by lyl224459 &nbsp;|&nbsp; ⭐ 如果我的项目对你有帮助，欢迎给个 Star！</p>
-        </footer>
-    </div>
+        <section class="section" id="activity">
+            <div class="shell activity-grid">
+                <div class="activity-card">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow" data-i18n="activityEyebrow">Recent Updates</p>
+                            <h2 data-i18n="activityTitle">最近公开动态</h2>
+                            <p data-i18n="activityDesc">从最近更新的仓库里提取一条足够有用的信号，让页面保持“现在进行时”的感觉。</p>
+                        </div>
+                    </div>
+                    <div class="activity-list" id="activityList"></div>
+                </div>
 
-    <!-- 回到顶部 -->
-    <button class="back-to-top" id="backToTop" title="回到顶部">↑</button>
+                <div class="activity-card">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow" data-i18n="languagesEyebrow">Languages</p>
+                            <h2 data-i18n="languagesTitle">语言与主题</h2>
+                            <p data-i18n="languagesDesc">按公开仓库的语言分布做一个轻量快照，再配合长期主题标签，给访问者一个更稳的判断依据。</p>
+                        </div>
+                    </div>
+                    <div class="language-stack" id="languageList"></div>
+                    <div class="topic-list">
+                        <span class="topic-chip" data-i18n="topic1">CloudSim</span>
+                        <span class="topic-chip" data-i18n="topic2">Task Scheduling</span>
+                        <span class="topic-chip" data-i18n="topic3">Metaheuristics</span>
+                        <span class="topic-chip" data-i18n="topic4">Qt Quick</span>
+                        <span class="topic-chip" data-i18n="topic5">ONNX Runtime</span>
+                        <span class="topic-chip" data-i18n="topic6">Open Source Tooling</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="shell">
+                <div class="contact-band">
+                    <div>
+                        <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+                        <h2 data-i18n="contactTitle">欢迎来 GitHub 交流项目、研究和实现细节</h2>
+                        <p data-i18n="contactDesc">如果你对云任务调度、桌面端推理应用、插件工具链或者实验平台搭建感兴趣，这里就是最直接的入口。</p>
+                    </div>
+                    <div class="contact-actions">
+                        <a class="button button-primary" href="https://github.com/lyl224459" target="_blank" rel="noopener me" data-i18n="contactPrimaryCta">访问主页</a>
+                        <a class="button button-secondary" href="https://github.com/lyl224459/lyl224459.github.io" target="_blank" rel="noopener" data-i18n="contactSecondaryCta">查看源码</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="shell footer-inner">
+            <p data-i18n="footerLead">Made for GitHub Pages, with live GitHub data when available.</p>
+            <p id="footerStamp">Snapshot date: 2026-05-16</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="回到顶部" data-aria-label-zh="回到顶部" data-aria-label-en="Back to top">↑</button>
 
     <script>
-    (function () {
-        // ========== 粒子背景 ==========
-        var particlesContainer = document.getElementById('particles');
-        var particleCount = 40;
-        var colors = ['rgba(108,92,231,0.7)', 'rgba(0,206,201,0.6)', 'rgba(253,121,168,0.6)', 'rgba(253,203,110,0.5)', 'rgba(255,255,255,0.5)'];
-
-        for (var i = 0; i < particleCount; i++) {
-            var particle = document.createElement('div');
-            particle.classList.add('particle');
-            var size = Math.random() * 4 + 1.5;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-            particle.style.animationDuration = (Math.random() * 14 + 8) + 's';
-            particle.style.animationDelay = Math.random() * 12 + 's';
-            particlesContainer.appendChild(particle);
-        }
-
-        // ========== 打字机效果 ==========
-        var phrases = [
-            '欢迎来到我的 GitHub 主页！',
-            '专注云计算任务调度研究 ☁️',
-            '热爱开源，持续学习 📚',
-            '探索群体智能算法的奥秘 🤖'
-        ];
-        var phraseIndex = 0;
-        var charIndex = 0;
-        var isDeleting = false;
-        var typewriterEl = document.getElementById('typewriter-text');
-
-        function typeLoop() {
-            var current = phrases[phraseIndex];
-            if (isDeleting) {
-                charIndex--;
-            } else {
-                charIndex++;
-            }
-            typewriterEl.textContent = current.substring(0, charIndex);
-
-            var speed = isDeleting ? 35 : 70;
-            if (!isDeleting && charIndex === current.length) {
-                speed = 1800;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                speed = 400;
-            }
-            setTimeout(typeLoop, speed);
-        }
-        typeLoop();
-
-        // ========== 数字计数器动画 ==========
-        function animateCounters() {
-            var counters = document.querySelectorAll('.stat-number[data-target]');
-            counters.forEach(function(counter) {
-                var target = parseInt(counter.getAttribute('data-target'), 10);
-                var duration = 1800;
-                var startTime = performance.now();
-                var startVal = 0;
-
-                function update(now) {
-                    var elapsed = now - startTime;
-                    var progress = Math.min(elapsed / duration, 1);
-                    // ease-out cubic
-                    var eased = 1 - Math.pow(1 - progress, 3);
-                    var current = Math.round(startVal + (target - startVal) * eased);
-                    counter.textContent = current;
-                    if (progress < 1) {
-                        requestAnimationFrame(update);
-                    }
+        (function () {
+            var username = "lyl224459";
+            var defaultLocale = "zh";
+            var supportedLocales = ["zh", "en"];
+            var fallbackSnapshotDate = "2026-05-16";
+            var currentLocale = defaultLocale;
+            var fallbackProfile = {
+                login: "lyl224459",
+                name: "lyl224459",
+                html_url: "https://github.com/lyl224459",
+                avatar_url: "https://avatars.githubusercontent.com/u/60121811?v=4",
+                location: "Bekasi, Indonesia",
+                bio: null,
+                public_repos: 10,
+                followers: 2,
+                following: 1,
+                updated_at: "2026-05-03T08:43:25Z"
+            };
+            var fallbackRepos = [
+                {
+                    name: "NeonSight-YOLODemoApp",
+                    html_url: "https://github.com/lyl224459/NeonSight-YOLODemoApp",
+                    description: "NeonSight 是一个基于 Qt Quick、OpenCV 和 ONNX Runtime 的 Windows 桌面端 YOLO 目标检测应用。",
+                    language: "C++",
+                    stargazers_count: 0,
+                    forks_count: 0,
+                    updated_at: "2026-05-16T13:24:13Z",
+                    homepage: null
+                },
+                {
+                    name: "onnxruntime-yolo",
+                    html_url: "https://github.com/lyl224459/onnxruntime-yolo",
+                    description: "ONNX Runtime cross-platform inferencing accelerator, packaged for YOLO usage.",
+                    language: "C++",
+                    stargazers_count: 0,
+                    forks_count: 0,
+                    updated_at: "2026-05-15T14:37:01Z",
+                    homepage: "https://onnxruntime.ai"
+                },
+                {
+                    name: "lyl224459.github.io",
+                    html_url: "https://github.com/lyl224459/lyl224459.github.io",
+                    description: "home page",
+                    language: "HTML",
+                    stargazers_count: 0,
+                    forks_count: 0,
+                    updated_at: "2026-05-02T13:58:49Z",
+                    homepage: null
+                },
+                {
+                    name: "obsidian-git-zh",
+                    html_url: "https://github.com/lyl224459/obsidian-git-zh",
+                    description: "一个强大的 Obsidian.md 社区插件，将 Git 版本控制集成到您的笔记库中。",
+                    language: "TypeScript",
+                    stargazers_count: 2,
+                    forks_count: 0,
+                    updated_at: "2026-04-10T17:21:30Z",
+                    homepage: ""
+                },
+                {
+                    name: "CloudSim-Benchmark",
+                    html_url: "https://github.com/lyl224459/CloudSim-Benchmark",
+                    description: "一个基于 CloudSim Plus 和 Kotlin 开发的云任务调度算法对比实验平台。",
+                    language: "Kotlin",
+                    stargazers_count: 1,
+                    forks_count: 0,
+                    updated_at: "2026-03-09T13:35:21Z",
+                    homepage: null
+                },
+                {
+                    name: "Cloudlet-Schedule",
+                    html_url: "https://github.com/lyl224459/Cloudlet-Schedule",
+                    description: "基于 CloudSim 5.0 框架的云计算任务调度仿真平台。",
+                    language: "Java",
+                    stargazers_count: 0,
+                    forks_count: 0,
+                    updated_at: "2026-03-08T01:35:46Z",
+                    homepage: ""
+                },
+                {
+                    name: "obsidian-releases",
+                    html_url: "https://github.com/lyl224459/obsidian-releases",
+                    description: "Community plugins list, theme list, and releases of Obsidian.",
+                    language: null,
+                    stargazers_count: 0,
+                    forks_count: 0,
+                    updated_at: "2026-01-22T14:40:26Z",
+                    homepage: "https://obsidian.md/"
+                },
+                {
+                    name: "BilibiliTask",
+                    html_url: "https://github.com/lyl224459/BilibiliTask",
+                    description: "哔哩哔哩(B站)自动完成每日任务、投币、点赞与签到。",
+                    language: "Java",
+                    stargazers_count: 0,
+                    forks_count: 0,
+                    updated_at: "2021-05-18T14:07:25Z",
+                    homepage: "https://srcrs.top/posts/202010191.html"
+                },
+                {
+                    name: "cloud189-action",
+                    html_url: "https://github.com/lyl224459/cloud189-action",
+                    description: "天翼云盘自动签到 + 抽奖",
+                    language: null,
+                    stargazers_count: 1,
+                    forks_count: 0,
+                    updated_at: "2021-05-18T13:50:13Z",
+                    homepage: null
+                },
+                {
+                    name: "wyy-action",
+                    html_url: "https://github.com/lyl224459/wyy-action",
+                    description: "网易云音乐自动签到 + 刷歌",
+                    language: null,
+                    stargazers_count: 1,
+                    forks_count: 0,
+                    updated_at: "2021-05-18T13:49:25Z",
+                    homepage: null
                 }
-                requestAnimationFrame(update);
-            });
-        }
-
-        // ========== 技能条动画 ==========
-        function animateBars() {
-            var bars = document.querySelectorAll('.tech-bar-fill[data-width]');
-            bars.forEach(function(bar) {
-                var width = bar.getAttribute('data-width');
-                setTimeout(function() {
-                    bar.style.width = width + '%';
-                }, 200);
-            });
-        }
-
-        // ========== 滚动显示动画 (Intersection Observer) ==========
-        function setupScrollReveal() {
-            var observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -40px 0px',
-                threshold: 0.15
+            ];
+            var featuredRepoOrder = [
+                "NeonSight-YOLODemoApp",
+                "CloudSim-Benchmark",
+                "Cloudlet-Schedule",
+                "obsidian-git-zh"
+            ];
+            var repoDetails = {
+                "NeonSight-YOLODemoApp": {
+                    summary: {
+                        zh: "Windows 桌面端 YOLO 目标检测应用，已经打通图片检测、参数调节、结果导出和 CUDA 发布流程。",
+                        en: "A Windows desktop YOLO detection app with image inference, parameter controls, export flows, and CUDA release packaging already connected."
+                    },
+                    tags: ["C++", "Qt Quick", "OpenCV", "ONNX Runtime"]
+                },
+                "CloudSim-Benchmark": {
+                    summary: {
+                        zh: "基于 CloudSim Plus 与 Kotlin 的云任务调度实验平台，适合做批处理与实时调度算法对比。",
+                        en: "A cloud task scheduling benchmark platform built with CloudSim Plus and Kotlin for batch and real-time algorithm comparison."
+                    },
+                    tags: ["Kotlin", "CloudSim Plus", "Task Scheduling", "Benchmark"]
+                },
+                "Cloudlet-Schedule": {
+                    summary: {
+                        zh: "基于 CloudSim 5.0 的任务调度仿真平台，聚焦元启发式算法和传统调度策略对比。",
+                        en: "A CloudSim 5.0 scheduling simulation platform focused on comparing metaheuristics with traditional scheduling strategies."
+                    },
+                    tags: ["Java", "CloudSim 5.0", "Metaheuristics", "Simulation"]
+                },
+                "obsidian-git-zh": {
+                    summary: {
+                        zh: "Obsidian Git 插件的完整简体中文版本，覆盖核心界面、文档与中文用户使用体验。",
+                        en: "A full Simplified Chinese localization of the Obsidian Git plugin, covering the main UI, docs, and overall user experience."
+                    },
+                    tags: ["TypeScript", "Obsidian", "Plugin", "Localization"]
+                },
+                "lyl224459.github.io": {
+                    summary: {
+                        zh: "个人 GitHub Pages 主页源码仓库，用来维护对外展示页面。",
+                        en: "The source repository for this GitHub Pages homepage."
+                    },
+                    tags: ["HTML", "GitHub Pages"]
+                }
+            };
+            var languageColors = {
+                "C++": "linear-gradient(90deg, #38bdf8, #0ea5e9)",
+                "Java": "linear-gradient(90deg, #f59e0b, #f97316)",
+                "Kotlin": "linear-gradient(90deg, #8b5cf6, #7c3aed)",
+                "TypeScript": "linear-gradient(90deg, #60a5fa, #2563eb)",
+                "HTML": "linear-gradient(90deg, #fb7185, #ef4444)"
+            };
+            var i18n = {
+                zh: {
+                    htmlLang: "zh-CN",
+                    pageTitle: "lyl224459 | GitHub Homepage",
+                    metaDescription: "lyl224459 的 GitHub 个人主页，聚焦云任务调度、推理应用工程与开源工具实践。",
+                    brandSubtitle: "GitHub Homepage",
+                    navOverview: "概览",
+                    navFocus: "方向",
+                    navProjects: "项目",
+                    navActivity: "动态",
+                    navContact: "联系",
+                    heroEyebrow: "个人介绍",
+                    heroTitle: "你好，我是 <span>lyl224459</span>",
+                    heroTag1: "CloudSim / CloudSim Plus",
+                    heroTag2: "Kotlin / Java",
+                    heroTag3: "Qt Quick / OpenCV / ONNX Runtime",
+                    heroTag4: "Open Source Tooling",
+                    heroPrimaryCta: "查看 GitHub",
+                    heroSecondaryCta: "浏览精选项目",
+                    heroMetricRepos: "公开仓库",
+                    heroMetricFollowers: "关注者",
+                    heroMetricStars: "累计 Star",
+                    profileStatus: "公开主页",
+                    profileLocationLabel: "位置",
+                    profileFocusLabel: "主要方向",
+                    profileFocusValue: "任务调度 / 推理应用 / 工具链",
+                    profileUpdatedLabel: "最近活跃",
+                    profileStateLabel: "主页状态",
+                    overviewEyebrow: "Overview",
+                    overviewTitle: "现在的技术画像",
+                    overviewDesc: "把 GitHub 上的公开资料整理成一眼能看懂的全局概览，方便别人快速判断你最近在做什么、擅长什么。",
+                    tileReposLabel: "Public Repositories",
+                    tileStarsLabel: "Total Stars",
+                    tileStackLabel: "Primary Stack",
+                    tileLatestRepoLabel: "Latest Active Repo",
+                    focusEyebrow: "Focus",
+                    focusTitle: "我会把什么东西做深",
+                    focusDesc: "这个区块不只是列关键词，而是把你的长期方向、工程肌肉和最近的项目重心放在一起讲清楚。",
+                    focusCard1Title: "云任务调度实验平台",
+                    focusCard1Desc: "围绕 CloudSim / CloudSim Plus 搭建可复现实验环境，把算法对比、批处理与实时调度研究放在统一框架里。",
+                    focusCard1Item1: "CloudSim Benchmark 与 Cloudlet Schedule 双线积累",
+                    focusCard1Item2: "元启发式与群体智能算法对比实验",
+                    focusCard1Item3: "偏向研究可复现与实验流程清晰",
+                    focusCard2Title: "桌面端推理应用工程",
+                    focusCard2Desc: "最近的重心已经延展到 Windows 桌面端视觉推理应用，把模型接入、界面交互和交付流程一并打通。",
+                    focusCard2Item1: "Qt Quick、OpenCV 与 ONNX Runtime 的组合实践",
+                    focusCard2Item2: "Windows x64 包装、参数调节、结果导出",
+                    focusCard2Item3: "关注真实部署场景下的稳定性与可试用性",
+                    focusCard3Title: "开源工具与本地化",
+                    focusCard3Desc: "除了研究项目，也会做贴近日常工作流的工具和翻译，让开源项目更容易真正被中文用户拿来使用。",
+                    focusCard3Item1: "Obsidian 插件汉化与文档整理",
+                    focusCard3Item2: "自动化脚本与效率工具的实用型项目",
+                    focusCard3Item3: "注重完整体验，而不只是把代码放上去",
+                    projectsEyebrow: "Featured Repositories",
+                    projectsTitle: "精选项目",
+                    projectsDesc: "默认展示最能代表当前能力结构的仓库，同时优先拉取 GitHub 最新公开数据，避免首页内容停在过去。",
+                    activityEyebrow: "Recent Updates",
+                    activityTitle: "最近公开动态",
+                    activityDesc: "从最近更新的仓库里提取一条足够有用的信号，让页面保持“现在进行时”的感觉。",
+                    languagesEyebrow: "Languages",
+                    languagesTitle: "语言与主题",
+                    languagesDesc: "按公开仓库的语言分布做一个轻量快照，再配合长期主题标签，给访问者一个更稳的判断依据。",
+                    topic1: "CloudSim",
+                    topic2: "Task Scheduling",
+                    topic3: "Metaheuristics",
+                    topic4: "Qt Quick",
+                    topic5: "ONNX Runtime",
+                    topic6: "Open Source Tooling",
+                    contactEyebrow: "Contact",
+                    contactTitle: "欢迎来 GitHub 交流项目、研究和实现细节",
+                    contactDesc: "如果你对云任务调度、桌面端推理应用、插件工具链或者实验平台搭建感兴趣，这里就是最直接的入口。",
+                    contactPrimaryCta: "访问主页",
+                    contactSecondaryCta: "查看源码",
+                    footerLead: "为 GitHub Pages 打造，支持在可用时同步 GitHub 实时数据。",
+                    latestRepoEmpty: "暂无",
+                    heroLead: "我主要在 GitHub 上记录云任务调度实验、Windows 桌面端推理工具和开源插件本地化相关的项目。这里可以快速了解我的研究方向、代表仓库和最近的公开更新。",
+                    profileFallbackBio: "专注云任务调度、桌面端推理工具与开源插件实践。",
+                    tileReposCopy: "公开仓库数量，来自 GitHub 个人主页。",
+                    tileStarsCopy: "累计公开 Star，用来快速感知项目关注度。",
+                    tileStackCopyPrefix: "近期活跃仓库覆盖 ",
+                    tileStackCopySuffix: "。",
+                    tileStackCopyEmpty: "语言信息暂时不可用。",
+                    tileLatestRepoCopyPrefix: "最近更新于 ",
+                    tileLatestRepoCopySuffix: "。",
+                    tileLatestRepoCopyEmpty: "最近更新数据暂不可用。",
+                    stateSnapshot: "使用本地快照",
+                    stateLive: "已同步 GitHub 实时数据",
+                    projectStatusPreparing: "正在准备项目数据...",
+                    projectStatusJoiner: " | ",
+                    projectStatusRepoSuffix: " 个精选仓库",
+                    projectPreviewAltSuffix: " 预览图",
+                    projectCardUpdated: "更新于",
+                    projectCardRepo: "仓库",
+                    projectCardHomepage: "主页",
+                    projectCardStar: "Star",
+                    projectCardFork: "Fork",
+                    projectSummaryEmpty: "暂无项目描述。",
+                    languageMixed: "混合",
+                    locationHidden: "未公开",
+                    dateUnknown: "未记录",
+                    footerStampPrefix: "快照日期: ",
+                    activityCountSuffix: " 个仓库",
+                    languageRepoSuffix: " 个仓库",
+                    backToTop: "回到顶部",
+                    pageNavLabel: "页面导航",
+                    languageSwitcherLabel: "语言切换"
+                },
+                en: {
+                    htmlLang: "en",
+                    pageTitle: "lyl224459 | GitHub Homepage",
+                    metaDescription: "The GitHub homepage of lyl224459, focused on cloud task scheduling, inference app engineering, and open-source tooling.",
+                    brandSubtitle: "GitHub Homepage",
+                    navOverview: "Overview",
+                    navFocus: "Focus",
+                    navProjects: "Projects",
+                    navActivity: "Updates",
+                    navContact: "Contact",
+                    heroEyebrow: "About Me",
+                    heroTitle: "Hi, I'm <span>lyl224459</span>",
+                    heroTag1: "CloudSim / CloudSim Plus",
+                    heroTag2: "Kotlin / Java",
+                    heroTag3: "Qt Quick / OpenCV / ONNX Runtime",
+                    heroTag4: "Open Source Tooling",
+                    heroPrimaryCta: "View GitHub",
+                    heroSecondaryCta: "Browse featured repos",
+                    heroMetricRepos: "Public Repos",
+                    heroMetricFollowers: "Followers",
+                    heroMetricStars: "Total Stars",
+                    profileStatus: "Public profile",
+                    profileLocationLabel: "Location",
+                    profileFocusLabel: "Primary focus",
+                    profileFocusValue: "Scheduling / Inference Apps / Tooling",
+                    profileUpdatedLabel: "Last active",
+                    profileStateLabel: "Homepage state",
+                    overviewEyebrow: "Overview",
+                    overviewTitle: "Current technical profile",
+                    overviewDesc: "A quick public-data snapshot from GitHub so visitors can understand what you are building and where your strengths are now.",
+                    tileReposLabel: "Public Repositories",
+                    tileStarsLabel: "Total Stars",
+                    tileStackLabel: "Primary Stack",
+                    tileLatestRepoLabel: "Latest Active Repo",
+                    focusEyebrow: "Focus",
+                    focusTitle: "What I keep pushing deeper",
+                    focusDesc: "This section does more than list keywords. It explains long-term direction, engineering habits, and the center of gravity in recent work.",
+                    focusCard1Title: "Cloud task scheduling platforms",
+                    focusCard1Desc: "Build reproducible experiment environments around CloudSim and CloudSim Plus, keeping algorithm comparisons and batch or real-time scheduling inside one framework.",
+                    focusCard1Item1: "Parallel iteration on CloudSim Benchmark and Cloudlet Schedule",
+                    focusCard1Item2: "Comparative experiments for metaheuristics and swarm intelligence",
+                    focusCard1Item3: "Strong bias toward reproducibility and clear experiment flow",
+                    focusCard2Title: "Desktop inference app engineering",
+                    focusCard2Desc: "Recent work extends into Windows desktop vision inference, connecting model integration, interface work, and delivery flow in one product loop.",
+                    focusCard2Item1: "Hands-on practice with Qt Quick, OpenCV, and ONNX Runtime",
+                    focusCard2Item2: "Windows x64 packaging, parameter controls, and export flows",
+                    focusCard2Item3: "Attention to stability and trial-readiness in real deployments",
+                    focusCard3Title: "Open-source tools and localization",
+                    focusCard3Desc: "Alongside research projects, there is also practical tooling and translation work that helps open-source projects become easier for Chinese users to adopt.",
+                    focusCard3Item1: "Obsidian plugin localization and documentation cleanup",
+                    focusCard3Item2: "Useful automation scripts and workflow tools",
+                    focusCard3Item3: "Care for the complete experience, not just shipping code",
+                    projectsEyebrow: "Featured Repositories",
+                    projectsTitle: "Featured projects",
+                    projectsDesc: "Show the repos that best represent the current capability mix, while preferring fresh public GitHub data whenever it is available.",
+                    activityEyebrow: "Recent Updates",
+                    activityTitle: "Recent public activity",
+                    activityDesc: "Pull a few meaningful signals from recently updated repos so the page feels current instead of archival.",
+                    languagesEyebrow: "Languages",
+                    languagesTitle: "Languages and themes",
+                    languagesDesc: "A lightweight language snapshot from public repos, paired with long-term topics that help visitors place the work quickly.",
+                    topic1: "CloudSim",
+                    topic2: "Task Scheduling",
+                    topic3: "Metaheuristics",
+                    topic4: "Qt Quick",
+                    topic5: "ONNX Runtime",
+                    topic6: "Open Source Tooling",
+                    contactEyebrow: "Contact",
+                    contactTitle: "Come talk on GitHub about projects, research, and implementation details",
+                    contactDesc: "If you are interested in cloud task scheduling, desktop inference apps, plugin tooling, or experiment platform design, this is the most direct place to start.",
+                    contactPrimaryCta: "Open profile",
+                    contactSecondaryCta: "View source",
+                    footerLead: "Built for GitHub Pages, with live GitHub data when available.",
+                    latestRepoEmpty: "N/A",
+                    heroLead: "I use GitHub to document projects around cloud task scheduling experiments, Windows desktop inference tools, and open-source plugin localization. This page gives a quick view of my focus areas, featured repositories, and recent public updates.",
+                    profileFallbackBio: "Focused on cloud task scheduling, desktop inference tools, and open-source tooling practice.",
+                    tileReposCopy: "Public repository count pulled from the GitHub profile.",
+                    tileStarsCopy: "Total public stars for a quick sense of project attention.",
+                    tileStackCopyPrefix: "Recent active repos span ",
+                    tileStackCopySuffix: ".",
+                    tileStackCopyEmpty: "Language data is not available right now.",
+                    tileLatestRepoCopyPrefix: "Most recently updated on ",
+                    tileLatestRepoCopySuffix: ".",
+                    tileLatestRepoCopyEmpty: "Recent update data is not available right now.",
+                    stateSnapshot: "Using local snapshot",
+                    stateLive: "Synced with live GitHub data",
+                    projectStatusPreparing: "Preparing project data...",
+                    projectStatusJoiner: " | ",
+                    projectStatusRepoSuffix: " featured repos",
+                    projectPreviewAltSuffix: " preview image",
+                    projectCardUpdated: "Updated",
+                    projectCardRepo: "Repository",
+                    projectCardHomepage: "Homepage",
+                    projectCardStar: "Star",
+                    projectCardFork: "Fork",
+                    projectSummaryEmpty: "No repository description available yet.",
+                    languageMixed: "Mixed",
+                    locationHidden: "Not public",
+                    dateUnknown: "Unknown",
+                    footerStampPrefix: "Snapshot date: ",
+                    activityCountSuffix: " repos",
+                    languageRepoSuffix: " repo(s)",
+                    backToTop: "Back to top",
+                    pageNavLabel: "Page navigation",
+                    languageSwitcherLabel: "Language switcher"
+                }
+            };
+            var lastRenderedData = {
+                profile: fallbackProfile,
+                repos: fallbackRepos,
+                sourceLabelKey: "stateSnapshot",
+                stamp: fallbackSnapshotDate
             };
 
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        // 触发计数器动画
-                        var counters = entry.target.querySelectorAll('.stat-number[data-target]');
-                        if (counters.length > 0) {
-                            animateCounters();
-                        }
-                        // 触发技能条动画
-                        var bars = entry.target.querySelectorAll('.tech-bar-fill[data-width]');
-                        if (bars.length > 0) {
-                            animateBars();
-                        }
-                        observer.unobserve(entry.target);
+            function escapeHtml(value) {
+                return String(value || "")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+            }
+
+            function formatDate(value) {
+                if (!value) {
+                    return t("dateUnknown");
+                }
+                var date = new Date(value);
+                if (isNaN(date.getTime())) {
+                    return t("dateUnknown");
+                }
+                var year = date.getFullYear();
+                var month = String(date.getMonth() + 1).padStart(2, "0");
+                var day = String(date.getDate()).padStart(2, "0");
+                return year + "-" + month + "-" + day;
+            }
+
+            function totalStars(repos) {
+                return repos.reduce(function (sum, repo) {
+                    return sum + (repo.stargazers_count || 0);
+                }, 0);
+            }
+
+            function totalForks(repos) {
+                return repos.reduce(function (sum, repo) {
+                    return sum + (repo.forks_count || 0);
+                }, 0);
+            }
+
+            function summarizeProfile(profile) {
+                if (profile && profile.bio) {
+                    return profile.bio;
+                }
+                return t("profileFallbackBio");
+            }
+
+            function repoSummary(repo) {
+                if (repoDetails[repo.name] && repoDetails[repo.name].summary) {
+                    var summary = repoDetails[repo.name].summary;
+                    if (typeof summary === "string") {
+                        return summary;
+                    }
+                    if (summary[currentLocale]) {
+                        return summary[currentLocale];
+                    }
+                    if (summary[defaultLocale]) {
+                        return summary[defaultLocale];
+                    }
+                }
+                return repo.description || t("projectSummaryEmpty");
+            }
+
+            function repoTags(repo) {
+                if (repoDetails[repo.name] && repoDetails[repo.name].tags) {
+                    return repoDetails[repo.name].tags.slice(0, 4);
+                }
+                var tags = [];
+                if (repo.language) {
+                    tags.push(repo.language);
+                }
+                if (repo.homepage) {
+                    tags.push("Homepage");
+                }
+                return tags.slice(0, 4);
+            }
+
+            function repoImage(repo) {
+                return "https://opengraph.githubassets.com/1/" + username + "/" + repo.name;
+            }
+
+            function sortByUpdated(repos) {
+                return repos.slice().sort(function (a, b) {
+                    return new Date(b.updated_at) - new Date(a.updated_at);
+                });
+            }
+
+            function pickFeatured(repos) {
+                var byName = {};
+                repos.forEach(function (repo) {
+                    byName[repo.name] = repo;
+                });
+
+                var featured = [];
+                featuredRepoOrder.forEach(function (name) {
+                    if (byName[name]) {
+                        featured.push(byName[name]);
                     }
                 });
-            }, observerOptions);
 
-            // 观察统计区和技能区
-            var statsSection = document.getElementById('stats');
-            var techSection = document.getElementById('tech');
-            if (statsSection) observer.observe(statsSection);
-            if (techSection) observer.observe(techSection);
+                sortByUpdated(repos).forEach(function (repo) {
+                    var exists = featured.some(function (item) {
+                        return item.name === repo.name;
+                    });
+                    if (!exists && featured.length < 4) {
+                        featured.push(repo);
+                    }
+                });
 
-            // 也在一开始就检查（如果已经在视口内）
-            setTimeout(function() {
-                var rect1 = statsSection ? statsSection.getBoundingClientRect() : null;
-                if (rect1 && rect1.top < window.innerHeight) animateCounters();
-                var rect2 = techSection ? techSection.getBoundingClientRect() : null;
-                if (rect2 && rect2.top < window.innerHeight) animateBars();
-            }, 600);
-        }
-
-        // ========== 回到顶部按钮 ==========
-        var backToTopBtn = document.getElementById('backToTop');
-        function toggleBackToTop() {
-            if (window.scrollY > 500) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
+                return featured.slice(0, 4);
             }
-        }
-        window.addEventListener('scroll', toggleBackToTop, { passive: true });
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
 
-        // ========== 初始化 ==========
-        setupScrollReveal();
-        toggleBackToTop();
-    })();
+            function languageStats(repos) {
+                var counts = {};
+                repos.forEach(function (repo) {
+                    if (!repo.language) {
+                        return;
+                    }
+                    counts[repo.language] = (counts[repo.language] || 0) + 1;
+                });
+
+                var entries = Object.keys(counts).map(function (language) {
+                    return {
+                        language: language,
+                        count: counts[language]
+                    };
+                });
+
+                entries.sort(function (a, b) {
+                    return b.count - a.count || a.language.localeCompare(b.language);
+                });
+
+                var total = entries.reduce(function (sum, entry) {
+                    return sum + entry.count;
+                }, 0);
+
+                return entries.map(function (entry) {
+                    return {
+                        language: entry.language,
+                        count: entry.count,
+                        percent: total ? Math.round(entry.count / total * 100) : 0
+                    };
+                });
+            }
+
+            function t(key) {
+                var dict = i18n[currentLocale] || i18n[defaultLocale];
+                return dict[key] || key;
+            }
+
+            function normalizeLocale(locale) {
+                if (!locale) {
+                    return null;
+                }
+                var lower = String(locale).toLowerCase();
+                for (var i = 0; i < supportedLocales.length; i++) {
+                    var candidate = supportedLocales[i];
+                    if (lower === candidate || lower.indexOf(candidate + "-") === 0) {
+                        return candidate;
+                    }
+                }
+                return null;
+            }
+
+            function detectLocale() {
+                var browserLocales = [];
+                if (Array.isArray(navigator.languages) && navigator.languages.length > 0) {
+                    browserLocales = navigator.languages.slice();
+                } else if (navigator.language) {
+                    browserLocales = [navigator.language];
+                }
+
+                for (var i = 0; i < browserLocales.length; i++) {
+                    var matched = normalizeLocale(browserLocales[i]);
+                    if (matched) {
+                        return matched;
+                    }
+                }
+
+                return defaultLocale;
+            }
+
+            function updateTextBySelector(selector, value, useHtml) {
+                var elements = document.querySelectorAll(selector);
+                elements.forEach(function (element) {
+                    if (useHtml) {
+                        element.innerHTML = value;
+                    } else {
+                        element.textContent = value;
+                    }
+                });
+            }
+
+            function applyStaticTranslations() {
+                document.documentElement.lang = t("htmlLang");
+                document.title = t("pageTitle");
+                var metaDescription = document.querySelector('meta[name="description"]');
+                if (metaDescription) {
+                    metaDescription.setAttribute("content", t("metaDescription"));
+                }
+
+                document.querySelectorAll("[data-i18n]").forEach(function (element) {
+                    var key = element.getAttribute("data-i18n");
+                    element.textContent = t(key);
+                });
+
+                document.querySelectorAll("[data-i18n-html]").forEach(function (element) {
+                    var key = element.getAttribute("data-i18n-html");
+                    element.innerHTML = t(key);
+                });
+
+                var nav = document.querySelector(".header-nav");
+                if (nav) {
+                    nav.setAttribute("aria-label", t("pageNavLabel"));
+                }
+
+                var langSwitcher = document.querySelector(".lang-switcher");
+                if (langSwitcher) {
+                    langSwitcher.setAttribute("aria-label", t("languageSwitcherLabel"));
+                }
+
+                document.querySelectorAll("[data-aria-label-zh]").forEach(function (element) {
+                    var label = element.getAttribute("data-aria-label-" + currentLocale);
+                    if (label) {
+                        element.setAttribute("aria-label", label);
+                    }
+                });
+
+                var backToTop = document.getElementById("backToTop");
+                if (backToTop) {
+                    backToTop.title = t("backToTop");
+                }
+
+                document.querySelectorAll(".lang-button").forEach(function (button) {
+                    var isActive = button.getAttribute("data-lang") === currentLocale;
+                    button.classList.toggle("is-active", isActive);
+                    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+                });
+            }
+
+            function updateText(id, value) {
+                var el = document.getElementById(id);
+                if (el) {
+                    el.textContent = value;
+                }
+            }
+
+            function renderProfile(profile, repos, sourceLabelKey, stamp) {
+                var profileText = summarizeProfile(profile);
+                var latestRepo = sortByUpdated(repos)[0];
+
+                updateText("heroLead", t("heroLead"));
+                updateText("heroRepos", String(profile.public_repos || repos.length));
+                updateText("heroFollowers", String(profile.followers || 0));
+                updateText("heroStars", String(totalStars(repos)));
+                updateText("profileName", profile.name || profile.login || username);
+                updateText("profileHandle", "@" + (profile.login || username));
+                updateText("profileSummary", profileText);
+                updateText("profileLocation", profile.location || t("locationHidden"));
+                updateText("profileUpdated", latestRepo ? formatDate(latestRepo.updated_at) : formatDate(profile.updated_at));
+                updateText("profileDataState", t(sourceLabelKey));
+                updateText("footerStamp", t("footerStampPrefix") + stamp);
+
+                var profilePhoto = document.getElementById("profilePhoto");
+                if (profilePhoto && profile.avatar_url) {
+                    profilePhoto.src = profile.avatar_url;
+                }
+
+                var brandAvatar = document.getElementById("brandAvatar");
+                if (brandAvatar && profile.avatar_url) {
+                    brandAvatar.src = profile.avatar_url;
+                }
+
+                var siteFavicon = document.getElementById("siteFavicon");
+                if (siteFavicon && profile.avatar_url) {
+                    siteFavicon.href = profile.avatar_url + (profile.avatar_url.indexOf("?") === -1 ? "?s=64" : "&s=64");
+                }
+            }
+
+            function renderOverview(profile, repos) {
+                var latestRepo = sortByUpdated(repos)[0];
+                var languages = languageStats(repos);
+                var leadingLanguage = languages[0] ? languages[0].language : t("languageMixed");
+                var stackSummary = languages.slice(0, 4).map(function (item) {
+                    return item.language;
+                }).join(" / ");
+
+                updateText("statRepos", String(profile.public_repos || repos.length));
+                updateText("statStars", String(totalStars(repos)));
+                updateText("statStack", leadingLanguage);
+                updateText("tileReposCopy", t("tileReposCopy"));
+                updateText("tileStarsCopy", t("tileStarsCopy"));
+                updateText("statStackCopy", stackSummary ? t("tileStackCopyPrefix") + stackSummary + t("tileStackCopySuffix") : t("tileStackCopyEmpty"));
+                updateText("statLatestRepo", latestRepo ? latestRepo.name.replace("-YOLODemoApp", "") : t("latestRepoEmpty"));
+                updateText("statLatestRepoCopy", latestRepo ? t("tileLatestRepoCopyPrefix") + formatDate(latestRepo.updated_at) + t("tileLatestRepoCopySuffix") : t("tileLatestRepoCopyEmpty"));
+            }
+
+            function renderProjects(profile, repos, sourceLabelKey, stamp) {
+                var projectGrid = document.getElementById("projectGrid");
+                var projectStatus = document.getElementById("projectsStatus");
+                if (!projectGrid) {
+                    return;
+                }
+
+                var featured = pickFeatured(repos);
+                projectGrid.innerHTML = featured.map(function (repo) {
+                    var tags = repoTags(repo);
+                    var homepage = repo.homepage && repo.homepage.trim() ? repo.homepage.trim() : "";
+                    return [
+                        '<article class="project-card">',
+                        '  <img class="project-image" src="' + escapeHtml(repoImage(repo)) + '" alt="' + escapeHtml(repo.name + t("projectPreviewAltSuffix")) + '" data-fallback="' + escapeHtml(profile.avatar_url || fallbackProfile.avatar_url) + '">',
+                        '  <div class="project-card-body">',
+                        '    <div class="project-topline">',
+                        '      <span class="project-language">' + escapeHtml(repo.language || t("languageMixed")) + '</span>',
+                        '      <span class="project-pill">' + escapeHtml(t("projectCardUpdated")) + ' ' + escapeHtml(formatDate(repo.updated_at)) + '</span>',
+                        '    </div>',
+                        '    <h3 class="project-title">' + escapeHtml(repo.name) + '</h3>',
+                        '    <p class="project-desc">' + escapeHtml(repoSummary(repo)) + '</p>',
+                        '    <div class="project-meta">',
+                        '      <span>' + escapeHtml(t("projectCardStar")) + ' ' + escapeHtml(String(repo.stargazers_count || 0)) + '</span>',
+                        '      <span>' + escapeHtml(t("projectCardFork")) + ' ' + escapeHtml(String(repo.forks_count || 0)) + '</span>',
+                        '    </div>',
+                        '    <div class="project-tags">' + tags.map(function (tag) {
+                            return '<span class="project-pill">' + escapeHtml(tag) + '</span>';
+                        }).join("") + '</div>',
+                        '    <div class="project-actions">',
+                        '      <a class="project-link-primary" href="' + escapeHtml(repo.html_url) + '" target="_blank" rel="noopener">' + escapeHtml(t("projectCardRepo")) + '</a>',
+                        homepage ? '      <a class="project-link-secondary" href="' + escapeHtml(homepage) + '" target="_blank" rel="noopener">' + escapeHtml(t("projectCardHomepage")) + '</a>' : "",
+                        '    </div>',
+                        '  </div>',
+                        '</article>'
+                    ].join("");
+                }).join("");
+
+                bindImageFallbacks();
+
+                if (projectStatus) {
+                    projectStatus.textContent = t(sourceLabelKey) + t("projectStatusJoiner") + stamp + t("projectStatusJoiner") + featured.length + t("projectStatusRepoSuffix");
+                }
+            }
+
+            function renderActivity(repos) {
+                var activityList = document.getElementById("activityList");
+                if (!activityList) {
+                    return;
+                }
+
+                var recent = sortByUpdated(repos).slice(0, 5);
+                activityList.innerHTML = recent.map(function (repo) {
+                    return [
+                        '<article class="activity-item">',
+                        '  <div class="activity-title-row">',
+                        '    <div class="activity-title">' + escapeHtml(repo.name) + '</div>',
+                        '    <div class="activity-date">' + escapeHtml(formatDate(repo.updated_at)) + '</div>',
+                        '  </div>',
+                        '  <p class="activity-desc">' + escapeHtml(repoSummary(repo)) + '</p>',
+                        '</article>'
+                    ].join("");
+                }).join("");
+            }
+
+            function renderLanguages(repos) {
+                var languageList = document.getElementById("languageList");
+                if (!languageList) {
+                    return;
+                }
+
+                var stats = languageStats(repos).slice(0, 5);
+                languageList.innerHTML = stats.map(function (item) {
+                    return [
+                        '<div class="language-row">',
+                        '  <div class="language-head">',
+                        '    <span>' + escapeHtml(item.language) + '</span>',
+                        '    <span>' + escapeHtml(String(item.count)) + escapeHtml(t("languageRepoSuffix")) + ' | ' + escapeHtml(String(item.percent)) + '%</span>',
+                        '  </div>',
+                        '  <div class="language-bar">',
+                        '    <div class="language-fill" style="width:' + escapeHtml(String(item.percent)) + '%;background:' + escapeHtml(languageColors[item.language] || "linear-gradient(90deg, #64748b, #94a3b8)") + ';"></div>',
+                        '  </div>',
+                        '</div>'
+                    ].join("");
+                }).join("");
+            }
+
+            function bindImageFallbacks() {
+                var images = document.querySelectorAll("img[data-fallback]");
+                images.forEach(function (image) {
+                    if (image.dataset.bound === "true") {
+                        return;
+                    }
+                    image.dataset.bound = "true";
+                    image.addEventListener("error", function () {
+                        if (image.dataset.failed === "true") {
+                            return;
+                        }
+                        image.dataset.failed = "true";
+                        image.src = image.getAttribute("data-fallback");
+                    });
+                });
+            }
+
+            function renderAll(profile, repos, sourceLabelKey, stamp) {
+                lastRenderedData = {
+                    profile: profile,
+                    repos: repos,
+                    sourceLabelKey: sourceLabelKey,
+                    stamp: stamp
+                };
+                applyStaticTranslations();
+                renderProfile(profile, repos, sourceLabelKey, stamp);
+                renderOverview(profile, repos);
+                renderProjects(profile, repos, sourceLabelKey, stamp);
+                renderActivity(repos);
+                renderLanguages(repos);
+            }
+
+            function setLocale(locale) {
+                if (supportedLocales.indexOf(locale) === -1) {
+                    locale = defaultLocale;
+                }
+                currentLocale = locale;
+                renderAll(lastRenderedData.profile, lastRenderedData.repos, lastRenderedData.sourceLabelKey, lastRenderedData.stamp);
+            }
+
+            function setupLanguageSwitcher() {
+                document.querySelectorAll(".lang-button").forEach(function (button) {
+                    button.addEventListener("click", function () {
+                        var locale = button.getAttribute("data-lang");
+                        if (locale && locale !== currentLocale) {
+                            setLocale(locale);
+                        }
+                    });
+                });
+            }
+
+            function withTimeout(promise, timeoutMs) {
+                return Promise.race([
+                    promise,
+                    new Promise(function (_, reject) {
+                        setTimeout(function () {
+                            reject(new Error("Request timed out"));
+                        }, timeoutMs);
+                    })
+                ]);
+            }
+
+            function loadGitHubData() {
+                var headers = {
+                    "Accept": "application/vnd.github+json"
+                };
+
+                return withTimeout(Promise.all([
+                    fetch("https://api.github.com/users/" + username, { headers: headers }),
+                    fetch("https://api.github.com/users/" + username + "/repos?sort=updated&per_page=100", { headers: headers })
+                ]), 8000).then(function (responses) {
+                    var userResponse = responses[0];
+                    var repoResponse = responses[1];
+                    if (!userResponse.ok || !repoResponse.ok) {
+                        throw new Error("GitHub API unavailable");
+                    }
+                    return Promise.all([userResponse.json(), repoResponse.json()]);
+                }).then(function (data) {
+                    var profile = data[0];
+                    var repos = data[1];
+                    renderAll(profile, repos, "stateLive", formatDate(new Date().toISOString()));
+                }).catch(function () {
+                    renderAll(fallbackProfile, fallbackRepos, "stateSnapshot", fallbackSnapshotDate);
+                });
+            }
+
+            function setupBackToTop() {
+                var button = document.getElementById("backToTop");
+                if (!button) {
+                    return;
+                }
+
+                function toggleVisibility() {
+                    if (window.scrollY > 520) {
+                        button.classList.add("is-visible");
+                    } else {
+                        button.classList.remove("is-visible");
+                    }
+                }
+
+                window.addEventListener("scroll", toggleVisibility, { passive: true });
+                button.addEventListener("click", function () {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+                toggleVisibility();
+            }
+
+            currentLocale = detectLocale();
+            setupLanguageSwitcher();
+            updateText("projectsStatus", t("projectStatusPreparing"));
+            renderAll(fallbackProfile, fallbackRepos, "stateSnapshot", fallbackSnapshotDate);
+            bindImageFallbacks();
+            setupBackToTop();
+            loadGitHubData();
+        })();
     </script>
 </body>
 </html>

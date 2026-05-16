@@ -1,0 +1,41 @@
+name: Light Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  basic-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate key files and homepage markers
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          required_files = [Path("index.html"), Path("README.md")]
+          missing_files = [str(path) for path in required_files if not path.is_file()]
+          if missing_files:
+              raise SystemExit("Missing required files: " + ", ".join(missing_files))
+
+          index = Path("index.html").read_text(encoding="utf-8")
+          readme = Path("README.md").read_text(encoding="utf-8")
+
+          checks = {
+              "homepage title": "<title>lyl224459 | GitHub Homepage</title>" in index,
+              "favicon binding": 'id="siteFavicon"' in index,
+              "browser locale detection": "function detectLocale()" in index,
+              "featured repository config": "var featuredRepoOrder = [" in index,
+              "README quick start": "## 快速开始" in readme,
+              "README release checklist": "## 发布前检查清单" in readme,
+          }
+
+          failed = [name for name, ok in checks.items() if not ok]
+          if failed:
+              raise SystemExit("Validation failed: " + ", ".join(failed))
+
+          print("Basic repository checks passed.")
+          PY
