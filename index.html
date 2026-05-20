@@ -946,34 +946,27 @@
 
             .header-inner {
                 min-height: auto;
-                padding: 14px 0 16px;
+                padding: 14px 0 15px;
                 gap: 10px;
             }
 
             .header-actions {
                 width: 100%;
-                flex-direction: column;
-                align-items: stretch;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
                 gap: 10px;
             }
 
             .header-nav {
-                width: 100%;
-                overflow-x: auto;
-                overflow-y: hidden;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
+                overflow: visible;
+                flex-wrap: wrap;
+                justify-content: flex-end;
                 gap: 8px;
-                padding-bottom: 4px;
-                scrollbar-width: none;
-            }
-
-            .header-nav a {
-                flex: 0 0 auto;
             }
 
             .lang-switcher {
-                align-self: flex-start;
+                align-self: center;
             }
 
             .hero {
@@ -981,57 +974,54 @@
             }
 
             .hero-grid {
-                gap: 18px;
+                gap: 16px;
             }
 
             .hero-title {
-                font-size: 2.15rem;
-                line-height: 1.1;
+                font-size: 2.05rem;
+                line-height: 1.08;
                 margin-bottom: 12px;
             }
 
             .hero-lead {
-                font-size: 0.98rem;
-                line-height: 1.7;
-                margin-bottom: 18px;
+                font-size: 0.96rem;
+                line-height: 1.62;
+                margin-bottom: 16px;
             }
 
             .hero-tags {
-                margin-bottom: 20px;
+                margin-bottom: 16px;
                 gap: 8px;
             }
 
             .hero-tag {
-                padding: 8px 10px;
-                font-size: 0.84rem;
+                min-height: 28px;
+                padding: 0 10px;
+                font-size: 0.8rem;
             }
 
             .hero-actions {
-                margin-bottom: 20px;
-                flex-direction: column;
+                margin-bottom: 16px;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
                 align-items: stretch;
-            }
-
-            .hero-actions .button,
-            .contact-actions .button,
-            .project-actions a {
-                width: 100%;
+                gap: 10px;
             }
 
             .hero-metric {
-                padding: 14px;
-            }
-
-            .profile-photo {
-                aspect-ratio: 16 / 5.5;
+                padding: 12px;
             }
 
             .hero-metrics {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
             }
 
             .overview-grid,
-            .focus-grid,
+            .focus-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
             .project-grid {
                 grid-template-columns: 1fr;
             }
@@ -1066,27 +1056,178 @@
             .activity-card,
             .contact-band,
             .profile-panel-body {
-                padding: 16px;
+                padding: 14px;
             }
 
             .profile-row {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: row;
+                align-items: center;
             }
 
-            .profile-details li,
+            .profile-details li {
+                flex-direction: row;
+                align-items: center;
+            }
+
             .activity-title-row {
                 flex-direction: column;
                 align-items: start;
+            }
+
+            .back-to-top {
+                right: 16px;
+                bottom: 16px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 720px) {
+            .header-inner {
+                align-items: center;
+            }
+
+            .brand {
+                width: auto;
+            }
+
+            .brand-subtitle {
+                display: block;
+            }
+
+            .nav-toggle {
+                display: none;
+            }
+
+            .hero-copy {
+                display: grid;
+                gap: 14px;
+            }
+
+            .hero-title,
+            .hero-lead,
+            .hero-tags,
+            .hero-actions {
+                margin-bottom: 0;
+            }
+
+            .hero-actions .button,
+            .contact-actions .button {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .hero-metric {
+                min-height: 90px;
+            }
+
+            .profile-panel {
+                display: grid;
+                grid-template-columns: clamp(86px, 18vw, 108px) minmax(0, 1fr);
+                gap: 14px;
+                align-items: start;
+                padding: 14px;
+            }
+
+            .profile-photo {
+                width: 100%;
+                max-width: 108px;
+                aspect-ratio: 1;
+                height: auto;
+                min-height: 0;
+                object-fit: cover;
+                border-radius: calc(var(--radius) + 2px);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+                background: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(168, 85, 247, 0.18));
+                align-self: start;
+            }
+
+            .profile-panel-body {
+                padding: 0;
+                display: grid;
+                gap: 12px;
+                align-content: start;
+            }
+
+            .profile-row {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                align-items: start;
+                gap: 10px;
+            }
+
+            .profile-summary {
+                margin-bottom: 0;
+            }
+
+            .profile-details {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .profile-details li {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: start;
+                gap: 4px;
+                padding: 8px 10px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: var(--radius);
+                background: rgba(255, 255, 255, 0.03);
+                border-top: 0;
             }
 
             .profile-details strong {
                 text-align: left;
             }
 
-            .back-to-top {
-                right: 16px;
-                bottom: 16px;
+            .tile {
+                padding: 13px 14px 14px 16px;
+            }
+
+            .project-card {
+                display: grid;
+                grid-template-columns: clamp(132px, 28vw, 172px) minmax(0, 1fr);
+                gap: 14px;
+                align-items: start;
+                padding: 14px;
+            }
+
+            .project-image {
+                width: 100%;
+                height: auto;
+                min-height: 0;
+                aspect-ratio: 4 / 3;
+                object-fit: cover;
+                border-radius: calc(var(--radius) + 2px);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+                background: linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.96));
+                align-self: start;
+            }
+
+            .project-card-body {
+                padding: 0;
+                display: grid;
+                gap: 10px;
+                align-content: start;
+            }
+
+            .project-meta,
+            .project-tags,
+            .project-actions {
+                gap: 8px;
+            }
+
+            .project-actions a {
+                width: fit-content;
+                min-width: 0;
+                padding: 0 10px;
+            }
+
+            .contact-actions {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                width: 100%;
             }
         }
 
@@ -2253,6 +2394,34 @@
                 following: 1,
                 updated_at: "2026-05-03T08:43:25Z"
             };
+            var fallbackProjectPreview =
+                "data:image/svg+xml;charset=UTF-8," +
+                encodeURIComponent(
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">' +
+                        '<defs>' +
+                            '<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">' +
+                                '<stop offset="0%" stop-color="#0f172a"/>' +
+                                '<stop offset="55%" stop-color="#13202b"/>' +
+                                '<stop offset="100%" stop-color="#1b2531"/>' +
+                            '</linearGradient>' +
+                            '<linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">' +
+                                '<stop offset="0%" stop-color="#22d3ee"/>' +
+                                '<stop offset="100%" stop-color="#8b5cf6"/>' +
+                            '</linearGradient>' +
+                        '</defs>' +
+                        '<rect width="640" height="480" rx="36" fill="url(#bg)"/>' +
+                        '<rect x="48" y="52" width="544" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>' +
+                        '<rect x="48" y="100" width="248" height="138" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>' +
+                        '<rect x="320" y="100" width="272" height="22" rx="11" fill="url(#accent)" opacity="0.95"/>' +
+                        '<rect x="320" y="146" width="232" height="16" rx="8" fill="rgba(255,255,255,0.13)"/>' +
+                        '<rect x="320" y="176" width="196" height="16" rx="8" fill="rgba(255,255,255,0.10)"/>' +
+                        '<rect x="320" y="206" width="160" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>' +
+                        '<rect x="48" y="286" width="170" height="44" rx="22" fill="rgba(34,211,238,0.18)" stroke="rgba(34,211,238,0.42)"/>' +
+                        '<rect x="236" y="286" width="148" height="44" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>' +
+                        '<rect x="48" y="362" width="544" height="18" rx="9" fill="rgba(255,255,255,0.06)"/>' +
+                        '<rect x="48" y="402" width="312" height="12" rx="6" fill="rgba(255,255,255,0.06)"/>' +
+                    '</svg>'
+                );
             var fallbackRepos = [
                 {
                     name: "NeonSight-YOLODemoApp",
@@ -2708,6 +2877,13 @@
                 return "https://opengraph.githubassets.com/1/" + username + "/" + repo.name;
             }
 
+            function repoImageFallback(repo, profile) {
+                if (repoDetails[repo.name] && repoDetails[repo.name].preview) {
+                    return repoDetails[repo.name].preview;
+                }
+                return fallbackProjectPreview;
+            }
+
             function sortByUpdated(repos) {
                 return repos.slice().sort(function (a, b) {
                     return new Date(b.updated_at) - new Date(a.updated_at);
@@ -2944,7 +3120,7 @@
                     var homepage = repo.homepage && repo.homepage.trim() ? repo.homepage.trim() : "";
                     return [
                         '<article class="project-card">',
-                        '  <img class="project-image" src="' + escapeHtml(repoImage(repo)) + '" alt="' + escapeHtml(repo.name + t("projectPreviewAltSuffix")) + '" data-fallback="' + escapeHtml(profile.avatar_url || fallbackProfile.avatar_url) + '">',
+                        '  <img class="project-image" src="' + escapeHtml(repoImage(repo)) + '" alt="' + escapeHtml(repo.name + t("projectPreviewAltSuffix")) + '" data-fallback="' + escapeHtml(repoImageFallback(repo, profile)) + '">',
                         '  <div class="project-card-body">',
                         '    <div class="project-topline">',
                         '      <span class="project-language">' + escapeHtml(repo.language || t("languageMixed")) + '</span>',
