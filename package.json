@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "bun ./node_modules/vite/bin/vite.js --host 127.0.0.1",
-    "build": "bun ./node_modules/typescript/bin/tsc --noEmit && bun ./node_modules/vite/bin/vite.js build",
+    "build": "bun run typecheck && bun ./node_modules/vite/bin/vite.js build && bun run pages:sync",
+    "build:dist": "bun run typecheck && bun ./node_modules/vite/bin/vite.js build",
+    "pages:sync": "bun scripts/sync-pages-root.ts",
     "preview": "bun ./node_modules/vite/bin/vite.js preview --host 127.0.0.1",
     "typecheck": "bun ./node_modules/typescript/bin/tsc --noEmit"
   },

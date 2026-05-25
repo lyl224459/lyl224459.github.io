@@ -43,6 +43,7 @@ jobs:
               Path("index.html"),
               Path("README.md"),
               Path("package.json"),
+              Path("src/index.html"),
               Path("src/main.ts"),
               Path("src/styles/main.scss"),
               Path("dist/index.html"),
@@ -51,7 +52,14 @@ jobs:
           if missing_files:
               raise SystemExit("Missing required files: " + ", ".join(missing_files))
 
-          index = Path("index.html").read_text(encoding="utf-8")
+          required_dirs = [Path("assets")]
+          missing_dirs = [str(path) for path in required_dirs if not path.is_dir()]
+          if missing_dirs:
+              raise SystemExit("Missing required directories: " + ", ".join(missing_dirs))
+
+          index = Path("src/index.html").read_text(encoding="utf-8")
+          root_index = Path("index.html").read_text(encoding="utf-8")
+          dist_index = Path("dist/index.html").read_text(encoding="utf-8")
           readme = Path("README.md").read_text(encoding="utf-8")
           package = Path("package.json").read_text(encoding="utf-8")
           main = Path("src/main.ts").read_text(encoding="utf-8")
@@ -59,7 +67,9 @@ jobs:
           checks = {
               "homepage title": "<title>lyl224459 | GitHub Homepage</title>" in index,
               "favicon binding": 'id="siteFavicon"' in index,
-              "vite entry": 'src="/src/main.ts"' in index,
+              "vite entry": 'src="/main.ts"' in index,
+              "root build snapshot": root_index == dist_index,
+              "root css asset": '<link rel="stylesheet"' in root_index and "/assets/" in root_index,
               "bootstrap dependency": '"bootstrap": "5.3.8"' in package,
               "typescript entry": "function bootstrapApp()" in main,
               "README quick start": "## 快速开始" in readme,

@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  root: "src",
   base: "/",
   css: {
     preprocessorOptions: {
@@ -11,9 +12,9 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: "dist",
+    outDir: "../dist",
     emptyOutDir: true,
-    sourcemap: true
+    sourcemap: false
   },
   server: {
     host: "127.0.0.1",

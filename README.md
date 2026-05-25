@@ -111,11 +111,14 @@ bun run build
 bun run preview
 ```
 
-`dist/` 是可部署到 GitHub Pages 的静态产物。
+`dist/` 是 Vite 生成的静态产物；`bun run build` 会同时把 `dist/index.html` 与 `dist/assets/` 同步到仓库根目录，兼容 GitHub Pages 的分支根目录发布模式。
 
 ## 部署方式
 
-当前仓库已配置 GitHub Actions 部署：推送到 `main` 后会运行 `bun install`、`bun run typecheck`、`bun run build`，并把 `dist/` 作为 Pages artifact 发布。
+当前仓库已配置双保险部署：
+
+- GitHub Actions：推送到 `main` 后运行 `bun install`、`bun run typecheck`、`bun run build`，并把 `dist/` 作为 Pages artifact 发布。
+- 分支根目录：`bun run build` 会把构建产物同步到根目录的 `index.html` 与 `assets/`，即使 GitHub Pages 仍配置为 `Deploy from a branch` 也能直接加载样式。
 
 GitHub 仓库设置里需要确认：
 
@@ -123,7 +126,7 @@ GitHub 仓库设置里需要确认：
 2. `Build and deployment` → `Source`
 3. 选择 `GitHub Actions`
 
-满足以上设置后，直接 push 到远程 `main` 分支即可触发构建并发布。不要把仓库配置成从分支根目录直接发布，否则浏览器会拿到源码入口而不是 Vite 构建产物。
+推荐使用以上设置。若暂时保持 `Deploy from a branch`，请确保提交的是执行 `bun run build` 后生成的根目录 `index.html` 与 `assets/`。
 
 ## 自动检查
 
@@ -135,8 +138,8 @@ GitHub 仓库设置里需要确认：
 - 使用 lockfile 安装依赖
 - 执行 `bun run typecheck`
 - 执行 `bun run build`
-- 校验 `dist/index.html` 构建产物存在
-- 推送到 `main` 时上传并部署 `dist/` 到 GitHub Pages
+- 校验 `dist/index.html`、根目录 `index.html` 与 `assets/` 构建产物存在
+- 推送到 `main` 时上传 `dist/` 到 GitHub Pages，并保留根目录静态快照兼容分支部署
 
 ## 发布前检查清单
 
