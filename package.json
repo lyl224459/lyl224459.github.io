@@ -1,0 +1,22 @@
+{
+  "name": "lyl224459-github-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun ./node_modules/vite/bin/vite.js --host 127.0.0.1",
+    "build": "bun ./node_modules/typescript/bin/tsc --noEmit && bun ./node_modules/vite/bin/vite.js build",
+    "preview": "bun ./node_modules/vite/bin/vite.js preview --host 127.0.0.1",
+    "typecheck": "bun ./node_modules/typescript/bin/tsc --noEmit"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "5.3.8"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
+    "sass": "^1.94.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4"
+  }
+}

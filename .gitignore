@@ -1,0 +1,10 @@
+node_modules/
+dist/
+artifacts/apptest/
+artifacts/
+homepage-full.png
+.vite/
+.cache/
+*.local
+*.log
+.DS_Store
