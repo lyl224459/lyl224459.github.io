@@ -173,32 +173,28 @@ export const repoDetails: Record<string, RepoDetails> = {
       zh: "中国软件著作权申请材料自动生成工具，基于 Claude Skills 机制读取本地项目并生成全套 .docx 申请材料。",
       en: "An automated Chinese software copyright application material generator that reads local projects and produces complete .docx application documents via Claude Skills."
     },
-    tags: ["Python", "Skills", "Document Generation", "Open Source"],
-    preview: "https://socialify.git.ci/lyl224459/SoftwareCopyright-Skill/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Diagonal+Stripes&theme=Dark"
+    tags: ["Python", "Skills", "Document Generation", "Open Source"]
   },
   "NeonSight-YOLODemoApp": {
     summary: {
       zh: "Windows 桌面端 YOLO 目标检测应用，已经打通图片检测、参数调节、结果导出和 CUDA 发布流程。",
       en: "A Windows desktop YOLO detection app with image inference, parameter controls, export flows, and CUDA release packaging already connected."
     },
-    tags: ["C++", "Qt Quick", "OpenCV", "ONNX Runtime"],
-    preview: "https://socialify.git.ci/lyl224459/NeonSight-YOLODemoApp/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Diagonal+Stripes&theme=Dark"
+    tags: ["C++", "Qt Quick", "OpenCV", "ONNX Runtime"]
   },
   "CloudSim-Benchmark": {
     summary: {
       zh: "基于 CloudSim Plus 与 Kotlin 的云任务调度实验平台，适合做批处理与实时调度算法对比。",
       en: "A cloud task scheduling benchmark platform built with CloudSim Plus and Kotlin for batch and real-time algorithm comparison."
     },
-    tags: ["Kotlin", "CloudSim Plus", "Task Scheduling", "Benchmark"],
-    preview: "https://socialify.git.ci/lyl224459/CloudSim-Benchmark/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Diagonal+Stripes&theme=Dark"
+    tags: ["Kotlin", "CloudSim Plus", "Task Scheduling", "Benchmark"]
   },
   "Cloudlet-Schedule": {
     summary: {
       zh: "基于 CloudSim 5.0 的任务调度仿真平台，聚焦元启发式算法和传统调度策略对比。",
       en: "A CloudSim 5.0 scheduling simulation platform focused on comparing metaheuristics with traditional scheduling strategies."
     },
-    tags: ["Java", "CloudSim 5.0", "Metaheuristics", "Simulation"],
-    preview: "https://socialify.git.ci/lyl224459/Cloudlet-Schedule/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Diagonal+Stripes&theme=Dark"
+    tags: ["Java", "CloudSim 5.0", "Metaheuristics", "Simulation"]
   },
   "obsidian-git-zh": {
     summary: {
