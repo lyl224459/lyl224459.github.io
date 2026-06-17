@@ -209,11 +209,13 @@ function repoTags(repo: GitHubRepo): readonly string[] {
 }
 
 function repoImage(repo: GitHubRepo): string {
+  const customPreview = repoDetails[repo.name]?.preview;
+  if (customPreview) return customPreview;
   return `https://opengraph.githubassets.com/1/${USERNAME}/${repo.name}`;
 }
 
-function repoImageFallback(repo: GitHubRepo): string {
-  return repoDetails[repo.name]?.preview ?? fallbackProjectPreview;
+function repoImageFallback(_repo: GitHubRepo): string {
+  return fallbackProjectPreview;
 }
 
 function pickFeatured(repos: readonly GitHubRepo[]): GitHubRepo[] {
