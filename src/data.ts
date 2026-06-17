@@ -173,28 +173,32 @@ export const repoDetails: Record<string, RepoDetails> = {
       zh: "中国软件著作权申请材料自动生成工具，基于 Claude Skills 机制读取本地项目并生成全套 .docx 申请材料。",
       en: "An automated Chinese software copyright application material generator that reads local projects and produces complete .docx application documents via Claude Skills."
     },
-    tags: ["Python", "Skills", "Document Generation", "Open Source"]
+    tags: ["Python", "Skills", "Document Generation", "Open Source"],
+    preview: "https://repository-images.githubusercontent.com/1271906928/adb60b92-9eb8-4475-80f8-5ef428a4ec28"
   },
   "NeonSight-YOLODemoApp": {
     summary: {
       zh: "Windows 桌面端 YOLO 目标检测应用，已经打通图片检测、参数调节、结果导出和 CUDA 发布流程。",
       en: "A Windows desktop YOLO detection app with image inference, parameter controls, export flows, and CUDA release packaging already connected."
     },
-    tags: ["C++", "Qt Quick", "OpenCV", "ONNX Runtime"]
+    tags: ["C++", "Qt Quick", "OpenCV", "ONNX Runtime"],
+    preview: "https://repository-images.githubusercontent.com/1239820033/b15d7f07-229d-429a-8f66-3f80c95f1aad"
   },
   "CloudSim-Benchmark": {
     summary: {
       zh: "基于 CloudSim Plus 与 Kotlin 的云任务调度实验平台，适合做批处理与实时调度算法对比。",
       en: "A cloud task scheduling benchmark platform built with CloudSim Plus and Kotlin for batch and real-time algorithm comparison."
     },
-    tags: ["Kotlin", "CloudSim Plus", "Task Scheduling", "Benchmark"]
+    tags: ["Kotlin", "CloudSim Plus", "Task Scheduling", "Benchmark"],
+    preview: "https://repository-images.githubusercontent.com/1121091209/a465831f-46c3-47a6-8668-155c8be89ead"
   },
   "Cloudlet-Schedule": {
     summary: {
       zh: "基于 CloudSim 5.0 的任务调度仿真平台，聚焦元启发式算法和传统调度策略对比。",
       en: "A CloudSim 5.0 scheduling simulation platform focused on comparing metaheuristics with traditional scheduling strategies."
     },
-    tags: ["Java", "CloudSim 5.0", "Metaheuristics", "Simulation"]
+    tags: ["Java", "CloudSim 5.0", "Metaheuristics", "Simulation"],
+    preview: "https://repository-images.githubusercontent.com/1121598484/12a84417-c851-4e01-9dc5-7b7a46d114fd"
   },
   "obsidian-git-zh": {
     summary: {
