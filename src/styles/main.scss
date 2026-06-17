@@ -171,6 +171,9 @@ img {
   font-weight: 850;
   line-height: 1;
   letter-spacing: -0.04em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .profile-card {
