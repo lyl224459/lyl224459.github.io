@@ -2,7 +2,7 @@ import type { GitHubProfile, GitHubRepo, Locale, RepoDetails } from "./types";
 
 export const USERNAME = "lyl224459" as const;
 export const DEFAULT_LOCALE: Locale = "zh";
-export const FALLBACK_SNAPSHOT_DATE = "2026-05-16" as const;
+export const FALLBACK_SNAPSHOT_DATE = "2026-06-17" as const;
 
 export const fallbackProfile: GitHubProfile = {
   login: "lyl224459",
@@ -11,10 +11,10 @@ export const fallbackProfile: GitHubProfile = {
   avatar_url: "https://avatars.githubusercontent.com/u/60121811?v=4",
   location: "Bekasi, Indonesia",
   bio: null,
-  public_repos: 10,
+  public_repos: 11,
   followers: 2,
   following: 1,
-  updated_at: "2026-05-03T08:43:25Z"
+  updated_at: "2026-06-17T06:04:48Z"
 };
 
 export const fallbackProjectPreview =
@@ -49,14 +49,24 @@ export const fallbackProjectPreview =
 
 export const fallbackRepos: GitHubRepo[] = [
   {
-    name: "NeonSight-YOLODemoApp",
-    html_url: "https://github.com/lyl224459/NeonSight-YOLODemoApp",
-    description: "NeonSight 是一个基于 Qt Quick、OpenCV 和 ONNX Runtime 的 Windows 桌面端 YOLO 目标检测应用。",
-    language: "C++",
+    name: "SoftwareCopyright-Skill",
+    html_url: "https://github.com/lyl224459/SoftwareCopyright-Skill",
+    description: "中国软件著作权申请材料生成器 Skills，本 Skills 通过阅读本地项目，自动生成全套 .docx 软著申请材料，全开源，无须再付费购买任何软著申请服务。",
+    language: "Python",
     stargazers_count: 0,
     forks_count: 0,
-    updated_at: "2026-05-16T13:24:13Z",
+    updated_at: "2026-06-17T06:31:21Z",
     homepage: null
+  },
+  {
+    name: "NeonSight-YOLODemoApp",
+    html_url: "https://github.com/lyl224459/NeonSight-YOLODemoApp",
+    description: "NeonSight is a Windows desktop YOLO detection application built with Qt Quick, OpenCV, and ONNX Runtime.",
+    language: "C++",
+    stargazers_count: 1,
+    forks_count: 0,
+    updated_at: "2026-05-26T06:51:47Z",
+    homepage: ""
   },
   {
     name: "onnxruntime-yolo",
@@ -72,16 +82,16 @@ export const fallbackRepos: GitHubRepo[] = [
     name: "lyl224459.github.io",
     html_url: "https://github.com/lyl224459/lyl224459.github.io",
     description: "home page",
-    language: "HTML",
+    language: "TypeScript",
     stargazers_count: 0,
     forks_count: 0,
-    updated_at: "2026-05-02T13:58:49Z",
-    homepage: null
+    updated_at: "2026-06-15T06:52:22Z",
+    homepage: "https://lyl224459.github.io/"
   },
   {
     name: "obsidian-git-zh",
     html_url: "https://github.com/lyl224459/obsidian-git-zh",
-    description: "一个强大的 Obsidian.md 社区插件，将 Git 版本控制集成到您的笔记库中。",
+    description: "一个强大的 Obsidian.md 社区插件，将 Git 版本控制集成到您的笔记库中。自动提交、拉取、推送，并在 Obsidian 内查看所有更改。🌏 完全汉化版本 - 本版本提供完整的简体中文界面和文档",
     language: "TypeScript",
     stargazers_count: 2,
     forks_count: 0,
@@ -91,17 +101,17 @@ export const fallbackRepos: GitHubRepo[] = [
   {
     name: "CloudSim-Benchmark",
     html_url: "https://github.com/lyl224459/CloudSim-Benchmark",
-    description: "一个基于 CloudSim Plus 和 Kotlin 开发的云任务调度算法对比实验平台。",
+    description: "一个基于 CloudSim Plus 和 Kotlin 开发的云任务调度算法对比实验平台，支持批处理和实时调度两种模式，集成了多种群体智能优化算法，为云计算任务调度研究提供完整的实验框架。",
     language: "Kotlin",
     stargazers_count: 1,
     forks_count: 0,
-    updated_at: "2026-03-09T13:35:21Z",
+    updated_at: "2026-06-16T12:23:28Z",
     homepage: null
   },
   {
     name: "Cloudlet-Schedule",
     html_url: "https://github.com/lyl224459/Cloudlet-Schedule",
-    description: "基于 CloudSim 5.0 框架的云计算任务调度仿真平台。",
+    description: "本项目是一个云计算任务调度仿真平台，基于 CloudSim 5.0 框架，实现了多种元启发式优化算法和传统调度算法，用于解决云环境下的任务调度问题。",
     language: "Java",
     stargazers_count: 0,
     forks_count: 0,
@@ -121,7 +131,7 @@ export const fallbackRepos: GitHubRepo[] = [
   {
     name: "BilibiliTask",
     html_url: "https://github.com/lyl224459/BilibiliTask",
-    description: "哔哩哔哩(B站)自动完成每日任务、投币、点赞与签到。",
+    description: "哔哩哔哩(B站)自动完成每日任务，投币，点赞，直播签到，自动兑换银瓜子为硬币，自动送出即将过期礼物，漫画App签到。",
     language: "Java",
     stargazers_count: 0,
     forks_count: 0,
@@ -151,13 +161,20 @@ export const fallbackRepos: GitHubRepo[] = [
 ];
 
 export const featuredRepoOrder = [
-  "NeonSight-YOLODemoApp",
   "CloudSim-Benchmark",
   "Cloudlet-Schedule",
-  "obsidian-git-zh"
+  "NeonSight-YOLODemoApp",
+  "SoftwareCopyright-Skill"
 ] as const;
 
 export const repoDetails: Record<string, RepoDetails> = {
+  "SoftwareCopyright-Skill": {
+    summary: {
+      zh: "中国软件著作权申请材料自动生成工具，基于 Claude Skills 机制读取本地项目并生成全套 .docx 申请材料。",
+      en: "An automated Chinese software copyright application material generator that reads local projects and produces complete .docx application documents via Claude Skills."
+    },
+    tags: ["Python", "Skills", "Document Generation", "Open Source"]
+  },
   "NeonSight-YOLODemoApp": {
     summary: {
       zh: "Windows 桌面端 YOLO 目标检测应用，已经打通图片检测、参数调节、结果导出和 CUDA 发布流程。",
@@ -200,5 +217,6 @@ export const languageColors: Record<string, string> = {
   Java: "linear-gradient(90deg, #f59e0b, #f97316)",
   Kotlin: "linear-gradient(90deg, #8b5cf6, #7c3aed)",
   TypeScript: "linear-gradient(90deg, #60a5fa, #2563eb)",
-  HTML: "linear-gradient(90deg, #fb7185, #ef4444)"
+  HTML: "linear-gradient(90deg, #fb7185, #ef4444)",
+  Python: "linear-gradient(90deg, #a78bfa, #7c3aed)"
 };
